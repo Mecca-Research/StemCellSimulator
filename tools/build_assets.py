@@ -496,6 +496,53 @@ def build_rbc() -> dict:
     return {"rbc": {k: {kk: vv for kk, vv in v.items() if not isinstance(vv, list)} for k, v in out.items()}}
 
 
+def hough_peaks(hspaces: np.ndarray, radii: np.ndarray, min_distance: int, threshold: float,
+                max_peaks: int) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Hough circle peaks that are identical on every CPU.
+
+    skimage's hough_circle_peaks ranks the peaks of all radii with an unstable
+    (SIMD) argsort before its cross-radius distance suppression, so equal
+    accumulator values come out in a CPU-dependent order (AVX2 and AVX-512
+    differ), and that order decides which of two nearby tied peaks survives.
+    Here the peaks are found one radius at a time, then ranked by
+    (accumulator desc, y, x, r) before the same suppression: a peak is dropped
+    if an earlier one lies within min_distance in both x and y.
+    """
+    acc, cx, cy, rad = [], [], [], []
+    for h, r in zip(hspaces, radii):
+        a, x, y, _ = transform.hough_circle_peaks(h[None], [r], min_xdistance=min_distance,
+                                                  min_ydistance=min_distance, threshold=threshold)
+        acc.append(a)
+        cx.append(x)
+        cy.append(y)
+        rad.append(np.full(len(a), r))
+    acc, cx, cy, rad = (np.concatenate(v) for v in (acc, cx, cy, rad))
+    keep = []
+    for i in np.lexsort((rad, cx, cy, -acc)):
+        if len(keep) == max_peaks:
+            break
+        if any(abs(cx[i] - cx[j]) <= min_distance and abs(cy[i] - cy[j]) <= min_distance for j in keep):
+            continue
+        keep.append(i)
+    return acc[keep], cx[keep], cy[keep], rad[keep]
+
+
+def select_organoids(acc: np.ndarray, cx: np.ndarray, cy: np.ndarray, rad: np.ndarray,
+                     shape: tuple[int, ...]) -> list[dict]:
+    """Greedy pick of non-overlapping circles inside the well, strongest first;
+    ties are broken by (y, x, r), so the result does not depend on input order."""
+    centre = np.array([shape[1] / 2, shape[0] / 2])
+    keep = []
+    for i in np.lexsort((rad, cx, cy, -acc)):
+        p = np.array([cx[i], cy[i]])
+        if np.linalg.norm(p - centre) > 0.47 * shape[1]:
+            continue
+        if any(np.linalg.norm(p - np.array([cx[j], cy[j]])) < 0.8 * max(rad[i], rad[j]) for j in keep):
+            continue
+        keep.append(i)
+    return [{"x": int(cx[i]), "y": int(cy[i]), "r": int(rad[i])} for i in keep]
+
+
 def build_organoids() -> dict:
     im = Image.open(RAW / "orgaquant_3.jpg").convert("L")
     width = 750
@@ -504,19 +551,9 @@ def build_organoids() -> dict:
     flat = a / filters.gaussian(a, 40)           # remove vignetting
     edges = feature.canny(flat, sigma=2.0, low_threshold=0.03, high_threshold=0.08)
     radii = np.arange(9, 46)
-    acc, cx, cy, rad = transform.hough_circle_peaks(transform.hough_circle(edges, radii), radii,
-                                                   min_xdistance=8, min_ydistance=8,
-                                                   threshold=0.45, total_num_peaks=400)
-    centre = np.array([a.shape[1] / 2, a.shape[0] / 2])
-    keep = []
-    for i in np.argsort(-acc):
-        p = np.array([cx[i], cy[i]])
-        if np.linalg.norm(p - centre) > 0.47 * a.shape[1]:
-            continue
-        if any(np.linalg.norm(p - np.array([cx[j], cy[j]])) < 0.8 * max(rad[i], rad[j]) for j in keep):
-            continue
-        keep.append(i)
-    circles = [{"x": int(cx[i]), "y": int(cy[i]), "r": int(rad[i])} for i in keep]
+    peaks = hough_peaks(transform.hough_circle(edges, radii), radii,
+                        min_distance=8, threshold=0.45, max_peaks=400)
+    circles = select_organoids(*peaks, a.shape)
     r = np.array([c["r"] for c in circles], float)
     base = to_u8(pnorm(flat, 0.5, 99.5))
     Image.fromarray(base).save(OUT / "organoids.jpg", quality=88)

@@ -1,17 +1,18 @@
 // Headless browser smoke test: every scene must load without errors, render a
 // non-blank WebGL frame and keep simulating. Screenshots go to tests/e2e/out/.
 //   node tests/e2e/smoke.mjs [sceneId ...]
+// SITE_ROOT=<dir> serves another directory, e.g. the assembled GitHub Pages site.
 import { chromium } from 'playwright';
 import { mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { serve } from './serve.mjs';
 import { SCENES } from '../../js/scenes/index.js';
 import { EXTRA_VIEWS } from './views.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const root = join(here, '..', '..');
+const root = process.env.SITE_ROOT ? resolve(process.env.SITE_ROOT) : join(here, '..', '..');
 const outDir = join(here, 'out');
 await mkdir(outDir, { recursive: true });
 
