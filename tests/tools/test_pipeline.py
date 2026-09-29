@@ -125,6 +125,34 @@ def test_first_order_fit_recovers_parameters():
     assert np.allclose(popt, [3.0, 1.2, 6.0], rtol=1e-4)
 
 
+def test_hough_peaks_break_ties_the_same_way_whatever_the_order():
+    # two radii with equally strong peaks 3 px apart: only one may survive, and
+    # it must be the same one however the radii (and so the peaks) are ordered
+    h = np.zeros((3, 40, 40))
+    h[0, 20, 20] = h[1, 23, 21] = 1.0
+    h[2, 5, 30] = 0.8
+    radii = np.array([10, 12, 14])
+    ref = ba.hough_peaks(h, radii, min_distance=8, threshold=0.45, max_peaks=10)
+    assert [(int(x), int(y), int(r)) for _, x, y, r in zip(*ref)] == [(20, 20, 10), (30, 5, 14)]
+    for perm in ([2, 1, 0], [1, 0, 2], [1, 2, 0]):
+        got = ba.hough_peaks(h[perm], radii[perm], min_distance=8, threshold=0.45, max_peaks=10)
+        for a, b in zip(ref, got):
+            assert np.array_equal(a, b)
+
+
+def test_select_organoids_does_not_depend_on_input_order():
+    rng = np.random.default_rng(3)
+    n = 60
+    acc = rng.integers(5, 9, n) / 10.0                  # many exact ties
+    cx, cy = rng.integers(20, 180, n), rng.integers(20, 180, n)
+    rad = rng.integers(9, 15, n)
+    ref = ba.select_organoids(acc, cx, cy, rad, (200, 200))
+    assert 5 < len(ref) < n
+    for seed in range(5):
+        p = np.random.default_rng(seed).permutation(n)
+        assert ba.select_organoids(acc[p], cx[p], cy[p], rad[p], (200, 200)) == ref
+
+
 # ----------------------------------------------------------------- committed assets
 def test_hipsc_mesh_buffer_matches_metadata():
     meta = json.loads((DERIVED / "hipsc_cells.json").read_text())

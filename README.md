@@ -20,12 +20,17 @@ collagen), epigenetics and cellular map. Every process is a real 3D model:
 
 It runs in the browser with three.js.
 
+### ▶ [Open the simulator](https://mecca-research.github.io/StemCellSimulator/)
+
+The simulator is live at **<https://mecca-research.github.io/StemCellSimulator/>**.
+It runs in any browser with WebGL 2 and needs no install.
+
 <p align="center">
-  <img src="docs/images/colony-confocal.webp" width="49%" alt="Real 3D confocal stack next to its growing digital twin">
-  <img src="docs/images/signaling-physical.webp" width="49%" alt="Cut-away stem cell with Notch, Wnt and Hedgehog signalling">
+  <a href="https://mecca-research.github.io/StemCellSimulator/#colony"><img src="docs/images/colony-confocal.webp" width="49%" alt="Real 3D confocal stack next to its growing digital twin"></a>
+  <a href="https://mecca-research.github.io/StemCellSimulator/#signaling"><img src="docs/images/signaling-physical.webp" width="49%" alt="Cut-away stem cell with Notch, Wnt and Hedgehog signalling"></a>
 </p>
 
-## Run it
+## Run it locally
 
 ```bash
 npm run serve        # any static server works; WebGL 2 required
@@ -33,8 +38,10 @@ npm run serve        # any static server works; WebGL 2 required
 ```
 
 No build step and no network access are needed. three.js is vendored.
-Deep links open a specific view, e.g. `#signaling?view=spheroid`,
-`#proteins?view=collagen`, `#gallery?view=rbc`.
+Deep links open a specific view, e.g.
+[`#signaling?view=spheroid`](https://mecca-research.github.io/StemCellSimulator/#signaling?view=spheroid),
+[`#proteins?view=collagen`](https://mecca-research.github.io/StemCellSimulator/#proteins?view=collagen),
+[`#gallery?view=rbc`](https://mecca-research.github.io/StemCellSimulator/#gallery?view=rbc).
 
 **Controls:**
 
@@ -60,19 +67,19 @@ Deep links open a specific view, e.g. `#signaling?view=spheroid`,
 | **Micrograph gallery** | Each real reference image with an **animated variation** made from its own pixels, next to a 3D model of the same process. | Validation |
 
 <p align="center">
-  <img src="docs/images/hematopoiesis-physical.webp" width="32%" alt="Bone-marrow niche">
-  <img src="docs/images/differentiation-physical.webp" width="32%" alt="Myoblast fusion">
-  <img src="docs/images/morphogenesis-physical.webp" width="32%" alt="Turing organoid">
+  <a href="https://mecca-research.github.io/StemCellSimulator/#hematopoiesis"><img src="docs/images/hematopoiesis-physical.webp" width="32%" alt="Bone-marrow niche"></a>
+  <a href="https://mecca-research.github.io/StemCellSimulator/#differentiation"><img src="docs/images/differentiation-physical.webp" width="32%" alt="Myoblast fusion"></a>
+  <a href="https://mecca-research.github.io/StemCellSimulator/#morphogenesis"><img src="docs/images/morphogenesis-physical.webp" width="32%" alt="Turing organoid"></a>
 </p>
 <p align="center">
-  <img src="docs/images/proteins-physical.webp" width="32%" alt="Hemoglobin assembly">
-  <img src="docs/images/landscape-physical.webp" width="32%" alt="Waddington landscape">
-  <img src="docs/images/kidney-histology.webp" width="32%" alt="Virtual H&amp;E kidney">
+  <a href="https://mecca-research.github.io/StemCellSimulator/#proteins"><img src="docs/images/proteins-physical.webp" width="32%" alt="Hemoglobin assembly"></a>
+  <a href="https://mecca-research.github.io/StemCellSimulator/#landscape"><img src="docs/images/landscape-physical.webp" width="32%" alt="Waddington landscape"></a>
+  <a href="https://mecca-research.github.io/StemCellSimulator/#kidney"><img src="docs/images/kidney-histology.webp" width="32%" alt="Virtual H&amp;E kidney"></a>
 </p>
 <p align="center">
-  <img src="docs/images/network-physical.webp" width="32%" alt="Reaction network, PCA embedding">
-  <img src="docs/images/atlas-physical.webp" width="32%" alt="Cellular map lineage tree">
-  <img src="docs/images/gallery-view-skin-physical.webp" width="32%" alt="Real H&amp;E skin with its animated variation and a 3D epidermis">
+  <a href="https://mecca-research.github.io/StemCellSimulator/#network"><img src="docs/images/network-physical.webp" width="32%" alt="Reaction network, PCA embedding"></a>
+  <a href="https://mecca-research.github.io/StemCellSimulator/#atlas"><img src="docs/images/atlas-physical.webp" width="32%" alt="Cellular map lineage tree"></a>
+  <a href="https://mecca-research.github.io/StemCellSimulator/#gallery?view=skin"><img src="docs/images/gallery-view-skin-physical.webp" width="32%" alt="Real H&amp;E skin with its animated variation and a 3D epidermis"></a>
 </p>
 
 ### Three ways to look at every scene
@@ -141,8 +148,11 @@ node tests/e2e/smoke.mjs --all --modes
 node tools/capture_previews.mjs
 ```
 
-CI runs all of the above on every pull request. A GitHub Pages workflow publishes
-the simulator from `main`; enable **Settings → Pages → Source: GitHub Actions** once.
+CI runs all of the above on every pull request. The GitHub Pages workflow
+publishes `main` to <https://mecca-research.github.io/StemCellSimulator/> on every
+push. To smoke-test that exact bundle locally, assemble `_site/` as in
+[`pages.yml`](.github/workflows/pages.yml) and run
+`SITE_ROOT=_site node tests/e2e/smoke.mjs`.
 
 ## Layout
 
