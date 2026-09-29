@@ -71,3 +71,44 @@ export function pca(X, k = 3) {
 
 export const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 export const len3 = (a) => Math.hypot(a[0], a[1], a[2]);
+
+/**
+ * PCA by power iteration with deflation (top-k components only). Suitable for
+ * a few hundred features where a full Jacobi decomposition would be slow.
+ * @returns {{scores:number[][], components:Float64Array[], explained:number[]}}
+ */
+export function powerPCA(X, k = 3, { iters = 300, seed = 1 } = {}) {
+  const n = X.length, d = X[0].length;
+  const mean = new Float64Array(d);
+  for (const r of X) for (let j = 0; j < d; j++) mean[j] += r[j] / n;
+  const Xc = X.map((r) => Float64Array.from(r, (v, j) => v - mean[j]));
+  // covariance C = Xc^T Xc / (n - 1), applied implicitly
+  const apply = (v, out) => {
+    const t = new Float64Array(n);
+    for (let i = 0; i < n; i++) { let s = 0; const r = Xc[i]; for (let j = 0; j < d; j++) s += r[j] * v[j]; t[i] = s; }
+    out.fill(0);
+    for (let i = 0; i < n; i++) { const r = Xc[i], ti = t[i]; if (ti) for (let j = 0; j < d; j++) out[j] += r[j] * ti; }
+    for (let j = 0; j < d; j++) out[j] /= Math.max(n - 1, 1);
+  };
+  let total = 0;
+  for (const r of Xc) for (let j = 0; j < d; j++) total += (r[j] * r[j]) / Math.max(n - 1, 1);
+  let s = seed;
+  const rand = () => ((s = (s * 16807) % 2147483647) / 2147483647) - 0.5;
+  const comps = [], vals = [];
+  const w = new Float64Array(d);
+  for (let c = 0; c < k; c++) {
+    let v = Float64Array.from({ length: d }, rand);
+    for (let it = 0; it < iters; it++) {
+      apply(v, w);
+      for (const u of comps) { let p = 0; for (let j = 0; j < d; j++) p += w[j] * u[j]; for (let j = 0; j < d; j++) w[j] -= p * u[j]; }
+      let nrm = 0; for (let j = 0; j < d; j++) nrm += w[j] * w[j];
+      nrm = Math.sqrt(nrm) || 1;
+      for (let j = 0; j < d; j++) v[j] = w[j] / nrm;
+    }
+    apply(v, w);
+    let lam = 0; for (let j = 0; j < d; j++) lam += w[j] * v[j];
+    comps.push(v); vals.push(lam);
+  }
+  const scores = Xc.map((r) => comps.map((u) => { let p = 0; for (let j = 0; j < d; j++) p += r[j] * u[j]; return p; }));
+  return { scores, components: comps, explained: vals.map((v) => (total ? v / total : 0)) };
+}

@@ -31,7 +31,8 @@ export default {
   async create(ctx) {
     // ctx.THREE, ctx.stage, ctx.root (THREE.Group - add everything here),
     // ctx.panel (control builder), ctx.assets (loaders), ctx.legend(items),
-    // ctx.setStatus(text) (transport bar readout)
+    // ctx.setStatus(text) (transport bar readout), ctx.query (URLSearchParams
+    // from "#scene-id?view=x" deep links - use it to pick the initial view)
     return {
       update(dt, t) {},  // dt = seconds of animation * speed (0 while paused)
       reset() {},        // optional: restart the simulation in place
@@ -55,7 +56,7 @@ with `ctx.setStatus`.
 | `instances.js` | `InstancePool(geometry, material, capacity, parent)`: `begin()`, `put(x,y,z,sx,sy,sz,color)`, `putOriented(pos, axis, sAlong, sPerp1, sPerp2, color)`, `putMatrix(m, color)`, `end()`. Grows automatically (the underlying `mesh` object is replaced - use a getter when registering it for picking). `idColor(id)` stable hues. |
 | `geometry.js` | `unitSphere`, `erythrocyteGeometry` (Evans-Fung), `lobedNucleus`, `indentedNucleus`, `blobGeometry`, `foldedChainGeometry`, `collagenStrandCurve`, `decodeMesh`, `mergeGeometries`. |
 | `volume.js` | `VolumeView(tex3d, extent, opts)` ray-marched volume (MIP / compositing / virtual H&E), `mosaicToVolume`, `mosaicToLabels`. |
-| `stage.js` | `stage.frame(center, radius, dir)`, `stage.clipAxis` / `stage.clipRange` (section plane), `stage.setPickables([{ object, info(hit) => string|null }])`, `stage.mode`, `stage.camera`, `stage.controls`. |
+| `stage.js` | `stage.frame(center, radius, dir)`, `stage.clipAxis` / `stage.clipRange` (section plane), `stage.setPickables([{ object, info(hit) => string|null }])`, `stage.setBloomScale(s)` (reset to 1 on every scene change), `stage.mode`, `stage.camera`, `stage.controls`. |
 | `ui.js` | `panel.section(title)`, `slider({label,min,max,step,value,onChange,format,log})`, `toggle`, `select({label,options,value,onChange})`, `buttons([{label,onClick,primary}])`, `readouts(keys) -> {set(k,v)}`, `chart({title,series:[{name,color,dash}],yRange,logY,xLabel,capacity}) -> Chart` (`push(x, values)`, `set(xs, columns)`, `clear()`), `equation(text)`, `note(html)`, `table(headers, rows)`. |
 | `assets.js` | `loadJSON(name)`, `loadBinary(name)`, `loadImageData(name)`, `loadImage(name)` for files in `assets/derived/`. |
 

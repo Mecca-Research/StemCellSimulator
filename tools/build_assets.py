@@ -18,13 +18,15 @@ hipsc_cells.json     per-cell measurements + mesh offsets + calibration summary.
 kidney_volume.jpg    4x4 mosaic of the 16-slice kidney stack (RGB channels).
 kidney_volume.json   volume metadata.
 mitosis.png/.json    DNA image + segmented nuclei, mitotic classification.
-skin.jpg/.json       H&E reference + hematoxylin nuclei positions + layer depth.
+skin.jpg/.json       H&E reference + hematoxylin nuclei positions + layer depth;
+                     skin_plate.jpg has the nuclei removed (for animation).
 npc_timelapse.png    15-frame x 2-channel mosaic of the nuclear-targeting movie.
 npc_kinetics.json    rim-enrichment time course and first-order fit.
 cell_qpi.png         single suspended cell (quantitative phase).
 rbc_*.jpg/rbc.json   blood smears; RBC internal ruler and absorbance profile
                      compared with the Evans-Fung 3D thickness.
-organoids.jpg/.json  intestinal organoids with Hough-detected circles.
+organoids.jpg/.json  intestinal organoids with Hough-detected circles;
+                     organoids_plate.jpg has them removed (for animation).
 calibration.json     every measured number the JS models consume.
 """
 from __future__ import annotations
@@ -348,12 +350,22 @@ def build_skin() -> dict:
     hema = filters.gaussian(hed[..., 0], 1.5)
     t = filters.threshold_otsu(hema)
     blobs = measure.label(morphology.remove_small_objects(hema > t, max_size=12))
-    nuclei = [{"x": r3(p.centroid[1]), "y": r3(p.centroid[0]), "r": r3(np.sqrt(p.area / np.pi))}
-              for p in measure.regionprops(blobs) if 12 < p.area < 600]
+    # nuclei: compact hematoxylin blobs (the thin, elongated keratin strands of
+    # the stratum corneum are rejected by shape)
+    keep = [p for p in measure.regionprops(blobs) if 12 < p.area < 600 and p.eccentricity < 0.95 and p.solidity > 0.7]
+    nuclei = [{"x": r3(p.centroid[1]), "y": r3(p.centroid[0]), "r": r3(np.sqrt(p.area / np.pi))} for p in keep]
     # epidermis = the hematoxylin-dense band; report its mean depth profile per column
     dens = filters.gaussian(hed[..., 0] > t, 6)
     col_profile = [int(np.argmax(dens[:, x] > 0.3)) if (dens[:, x] > 0.3).any() else -1
                    for x in range(0, 1024, 16)]
+    # background plate: nuclei replaced by the locally median-filtered tissue so
+    # the animated variation can move real nuclei without leaving copies behind
+    nuc_mask = ndi.binary_dilation(np.isin(blobs, [p.label for p in keep]), iterations=3)
+    rgb8 = np.asarray(im)
+    plate = rgb8.copy()
+    med = np.stack([ndi.median_filter(rgb8[..., c], size=17) for c in range(3)], axis=-1)
+    plate[nuc_mask] = med[nuc_mask]
+    Image.fromarray(plate).save(OUT / "skin_plate.jpg", quality=86, optimize=True)
     dump(OUT / "skin.json", {"source": "Kilbad, Wikimedia Commons, public domain",
                              "size": [1024, 768], "n_nuclei": len(nuclei), "nuclei": nuclei,
                              "epidermis_top_px_every16": col_profile})
@@ -434,7 +446,7 @@ def build_rbc() -> dict:
         lab = measure.label(morphology.remove_small_objects(mask, max_size=60))
         pts = np.loadtxt(RAW / f"{stem}.txt", ndmin=2).astype(int)
         yy, xx = np.mgrid[0:lab.shape[0], 0:lab.shape[1]]
-        diam, profiles = [], []
+        diam, profiles, centres = [], [], []
         for x, y, cls in pts:
             if cls != 0:
                 continue
@@ -446,12 +458,13 @@ def build_rbc() -> dict:
                 continue
             diam.append(p.equivalent_diameter_area)
             cy, cx = p.centroid
+            centres.append([r3(cx), r3(cy)])
             rr = np.hypot(yy - cy, xx - cx) / (p.equivalent_diameter_area / 2)
             profiles.append([absorb[(rr >= bins[i]) & (rr < bins[i + 1])].mean() for i in range(24)])
         d_px = float(np.median(diam))
         entry = {"n_cells": len(diam), "diameter_px_median": r3(d_px),
                  "diameter_px_iqr": [r3(v) for v in np.percentile(diam, [25, 75])],
-                 "um_per_px": r3(EVANS_FUNG[0] / d_px)}
+                 "um_per_px": r3(EVANS_FUNG[0] / d_px), "centres_px": centres}
         if tag == "normal":
             prof = np.nanmedian(np.array(profiles), axis=0)
             prof /= prof.max()
@@ -505,7 +518,16 @@ def build_organoids() -> dict:
         keep.append(i)
     circles = [{"x": int(cx[i]), "y": int(cy[i]), "r": int(rad[i])} for i in keep]
     r = np.array([c["r"] for c in circles], float)
-    Image.fromarray(to_u8(pnorm(flat, 0.5, 99.5))).save(OUT / "organoids.jpg", quality=88)
+    base = to_u8(pnorm(flat, 0.5, 99.5))
+    Image.fromarray(base).save(OUT / "organoids.jpg", quality=88)
+    # plate without organoids (for the animated variation)
+    yy, xx = np.mgrid[0:base.shape[0], 0:base.shape[1]]
+    mask = np.zeros(base.shape, bool)
+    for c in circles:
+        mask |= (xx - c["x"]) ** 2 + (yy - c["y"]) ** 2 <= (c["r"] + 4) ** 2
+    plate = base.copy()
+    plate[mask] = ndi.median_filter(base, size=41)[mask]
+    Image.fromarray(plate).save(OUT / "organoids_plate.jpg", quality=86)
     stats = {"n_organoids": len(circles), "radius_px_median": r3(np.median(r)),
              "radius_cv": r3(r.std() / r.mean()), "radius_p90_over_median": r3(np.percentile(r, 90) / np.median(r))}
     dump(OUT / "organoids.json", {"source": "OrgaQuant test data (MIT)", "size": [a.shape[1], a.shape[0]],

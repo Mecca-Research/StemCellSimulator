@@ -140,6 +140,7 @@ export class Chart {
 export function fmt(v) {
   const a = Math.abs(v);
   if (a === 0) return '0';
+  if (Number.isInteger(v) && a < 1e6) return String(v);
   if (a >= 1e4 || a < 1e-2) return v.toExponential(1);
   if (a >= 100) return v.toFixed(0);
   if (a >= 10) return v.toFixed(1);

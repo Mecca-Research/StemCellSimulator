@@ -143,3 +143,69 @@ export function decodeMesh(buffer, meta, meshInfo) {
 }
 
 export { mergeGeometries, mergeVertices };
+
+/**
+ * Tube with fixed topology whose centre-line can be re-shaped every frame
+ * without allocating (parallel-transport frames). Used for chains that fold,
+ * wind or grow.
+ */
+export class DynamicTube {
+  constructor(segments = 120, radial = 8, radius = 0.3) {
+    this.segments = segments;
+    this.radial = radial;
+    this.radius = radius;
+    const g = new THREE.BufferGeometry();
+    const nv = (segments + 1) * radial;
+    this.pos = new Float32Array(nv * 3);
+    this.nrm = new Float32Array(nv * 3);
+    g.setAttribute('position', new THREE.BufferAttribute(this.pos, 3).setUsage(THREE.DynamicDrawUsage));
+    g.setAttribute('normal', new THREE.BufferAttribute(this.nrm, 3).setUsage(THREE.DynamicDrawUsage));
+    const idx = [];
+    for (let i = 0; i < segments; i++) {
+      for (let j = 0; j < radial; j++) {
+        const a = i * radial + j, b = i * radial + ((j + 1) % radial), c = (i + 1) * radial + j, d = (i + 1) * radial + ((j + 1) % radial);
+        idx.push(a, c, b, b, c, d);
+      }
+    }
+    g.setIndex(idx);
+    this.geometry = g;
+    this.pts = Array.from({ length: segments + 1 }, () => new THREE.Vector3());
+    this._t = new THREE.Vector3(); this._n = new THREE.Vector3(); this._b = new THREE.Vector3(); this._prev = new THREE.Vector3(0, 1, 0);
+  }
+
+  /** fn(s in [0,1], out Vector3) writes the centre-line point; radiusFn(s) optional. */
+  update(fn, radiusFn = null) {
+    const { segments, radial, pts, pos, nrm } = this;
+    for (let i = 0; i <= segments; i++) fn(i / segments, pts[i]);
+    const t = this._t, n = this._n, b = this._b;
+    n.copy(this._prev);
+    for (let i = 0; i <= segments; i++) {
+      const p0 = pts[Math.max(i - 1, 0)], p1 = pts[Math.min(i + 1, segments)];
+      t.subVectors(p1, p0);
+      if (t.lengthSq() < 1e-12) t.set(1, 0, 0);
+      t.normalize();
+      // parallel transport: remove the tangential part of the previous normal
+      n.addScaledVector(t, -n.dot(t));
+      if (n.lengthSq() < 1e-8) n.set(-t.y, t.x, 0).lengthSq() < 1e-8 ? n.set(0, -t.z, t.y) : null;
+      n.normalize();
+      b.crossVectors(t, n);
+      const r = radiusFn ? radiusFn(i / segments) : this.radius;
+      for (let j = 0; j < radial; j++) {
+        const a = (j / radial) * Math.PI * 2, ca = Math.cos(a), sa = Math.sin(a);
+        const k = (i * radial + j) * 3;
+        const nx = ca * n.x + sa * b.x, ny = ca * n.y + sa * b.y, nz = ca * n.z + sa * b.z;
+        nrm[k] = nx; nrm[k + 1] = ny; nrm[k + 2] = nz;
+        pos[k] = pts[i].x + r * nx; pos[k + 1] = pts[i].y + r * ny; pos[k + 2] = pts[i].z + r * nz;
+      }
+    }
+    this.geometry.attributes.position.needsUpdate = true;
+    this.geometry.attributes.normal.needsUpdate = true;
+    this.geometry.computeBoundingSphere();
+  }
+
+  /** Reveal only the first fraction f of the tube (e.g. a chain being translated). */
+  reveal(f) {
+    const n = Math.round(Math.min(Math.max(f, 0), 1) * this.segments) * this.radial * 6;
+    this.geometry.setDrawRange(0, n);
+  }
+}

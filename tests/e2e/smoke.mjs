@@ -29,10 +29,15 @@ page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 page.on('pageerror', (e) => errors.push(String(e)));
 
 let failed = 0;
-for (const id of ids) {
+for (const spec of ids) {
+  // spec is a scene id, optionally with a query: "gallery?view=skin"
+  const id = spec.split('?')[0];
+  const shot = spec.replace(/[?&=]/g, '-');
+  // a fresh document per scene (a hash-only change would reuse the page)
+  await page.goto('about:blank');
   const before = errors.length;
   const t0 = Date.now();
-  await page.goto(`${url}#${id}`);
+  await page.goto(`${url}#${spec}`);
   let ok = true, why = '';
   try {
     await page.waitForFunction((sid) => window.__sim?.ready && window.__sim.sceneId === sid, id, { timeout: 90000 });
@@ -57,7 +62,7 @@ for (const id of ids) {
       const mean = s / n;
       return { mean, std: Math.sqrt(Math.max(s2 / n - mean * mean, 0)) };
     });
-    await page.screenshot({ path: join(outDir, `${id}${mode === 'physical' ? '' : '-' + mode}.png`) });
+    await page.screenshot({ path: join(outDir, `${shot}${mode === 'physical' ? '' : '-' + mode}.png`) });
     if (stats.std < 2) { ok = false; why ||= `blank frame in ${mode} (std ${stats.std.toFixed(2)})`; }
     console.log(`   ${mode.padEnd(9)} mean ${stats.mean.toFixed(1)} std ${stats.std.toFixed(1)}`);
   }
@@ -65,7 +70,7 @@ for (const id of ids) {
   const simErrors = await page.evaluate(() => window.__sim?.errors ?? []);
   const newErrors = [...errors.slice(before), ...simErrors];
   if (newErrors.length) { ok = false; why ||= newErrors.join(' | ').slice(0, 400); }
-  console.log(`${ok ? 'PASS' : 'FAIL'} ${id.padEnd(16)} ${((Date.now() - t0) / 1000).toFixed(1)}s ${why}`);
+  console.log(`${ok ? 'PASS' : 'FAIL'} ${spec.padEnd(16)} ${((Date.now() - t0) / 1000).toFixed(1)}s ${why}`);
   if (!ok) failed++;
   await page.evaluate(() => { window.__sim.errors.length = 0; });
 }

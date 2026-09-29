@@ -57,7 +57,7 @@ void main() {
   float j = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453);
   vec3 p = vCamObj + dir * (t.x + dt * j);
   vec3 acc = vec3(0.0); float aacc = 0.0; vec3 mip = vec3(0.0);
-  vec3 odH = vec3(0.0);
+  vec3 odH = vec3(0.0); float nIn = 0.0;
   float stepScale = dt / 0.5;
   for (int i = 0; i < 512; i++) {
     if (i >= uSteps) break;
@@ -73,8 +73,10 @@ void main() {
       if (uHasLab == 1) lab = texture(uLab, uvw).r * 255.0;
       float cid = mod(lab, 128.0);
       if (uMode == 2) {
-        // virtual H&E optical density accumulates along the ray
-        odH += (vec3(0.860, 1.0, 0.300) * v.g * 1.6 + vec3(0.050, 1.0, 0.544) * (0.25 + v.r) * 0.6) * uDensity * stepScale * 0.06;
+        // virtual H&E: stain densities averaged along the ray, i.e. the look
+        // of a thin physical section regardless of view angle or slab depth
+        odH += vec3(0.860, 1.0, 0.300) * v.g * 1.6 + vec3(0.050, 1.0, 0.544) * (0.25 + v.r) * 0.6;
+        nIn += 1.0;
       } else {
         vec3 c = uC0 * v.r + uC1 * v.g + uC2 * v.b;
         if (uHasLab == 1 && cid > 0.5) {
@@ -97,7 +99,7 @@ void main() {
   }
   vec4 outc;
   if (uMode == 2) {
-    vec3 T = exp(-odH * 2.3);
+    vec3 T = exp(-(odH / max(nIn, 1.0)) * uDensity * 1.6);
     outc = vec4(T, 1.0 - min(min(T.r, T.g), T.b) * 0.15);
     outc.rgb = T; outc.a = uOpacity;
   } else if (uStyle == 0) {

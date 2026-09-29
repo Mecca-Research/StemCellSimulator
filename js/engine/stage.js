@@ -56,6 +56,7 @@ export class Stage {
     this.composer.addPass(this.bloom);
     this.composer.addPass(new OutputPass());
 
+    this.bloomScale = 1; // scenes showing bright transmitted-light images turn bloom down
     this.raycaster = new THREE.Raycaster();
     this.pointer = new THREE.Vector2();
     this.pickables = [];
@@ -67,6 +68,11 @@ export class Stage {
     this.frames = 0;
     this.clock = new THREE.Clock();
     this.onFrame = null;
+    // adaptive resolution: keep interaction smooth on weak GPUs / software GL
+    this.maxPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    this.pixelRatio = this.maxPixelRatio;
+    this._frameAcc = 0;
+    this._frameN = 0;
 
     this._resize = () => this.resize();
     window.addEventListener('resize', this._resize);
@@ -85,13 +91,18 @@ export class Stage {
   setMode(mode) {
     setMode(mode);
     this.scene.background = BACKGROUNDS[mode].clone();
-    this.bloom.strength = BLOOM[mode];
+    this.bloom.strength = BLOOM[mode] * this.bloomScale;
     this.bloom.threshold = BLOOM_THRESHOLD[mode];
     this.renderer.toneMapping = mode === 'histology' ? THREE.NoToneMapping : THREE.ACESFilmicToneMapping;
     for (const fn of this.modeListeners) fn(mode);
   }
 
   get mode() { return getMode(); }
+
+  setBloomScale(s) {
+    this.bloomScale = s;
+    this.bloom.strength = BLOOM[getMode()] * s;
+  }
 
   /** Frame the camera on a bounding sphere. */
   frame(center, radius, dir = new THREE.Vector3(0.35, 0.55, 1)) {
@@ -143,7 +154,9 @@ export class Stage {
   start() {
     const tick = () => {
       this._raf = requestAnimationFrame(tick);
-      const dt = Math.min(this.clock.getDelta(), 1 / 20);
+      const raw = this.clock.getDelta();
+      const dt = Math.min(raw, 1 / 20);
+      this.adaptResolution(raw);
       shared.uTime.value += dt;
       if (this.onFrame) this.onFrame(this.running ? dt * this.speed : 0, dt);
       this.controls.update();
@@ -152,6 +165,22 @@ export class Stage {
       this.frames++;
     };
     tick();
+  }
+
+  adaptResolution(raw) {
+    this._frameAcc += raw;
+    if (++this._frameN < 20) return;
+    const mean = this._frameAcc / this._frameN;
+    this._frameAcc = 0; this._frameN = 0;
+    let pr = this.pixelRatio;
+    if (mean > 1 / 24 && pr > 0.35) pr = Math.max(0.35, pr * 0.8);
+    else if (mean < 1 / 50 && pr < this.maxPixelRatio) pr = Math.min(this.maxPixelRatio, pr * 1.15);
+    if (pr !== this.pixelRatio) {
+      this.pixelRatio = pr;
+      this.renderer.setPixelRatio(pr);
+      this.composer.setPixelRatio?.(pr);
+      this.resize();
+    }
   }
 
   screenshot() {

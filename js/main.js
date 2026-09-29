@@ -43,10 +43,14 @@ function setStatus(text) {
 }
 
 // --------------------------------------------------------------- lifecycle
-async function activate(id) {
+async function activate(hash) {
+  // "#scene-id?view=x&..." -> scene id + query parameters for the scene
+  const [id, qs = ''] = hash.split('?');
+  const query = new URLSearchParams(qs);
   const def = SCENES.find((s) => s.id === id) ?? SCENES[0];
-  if (activating === def.id) return;
-  activating = def.id;
+  const key = `${def.id}?${query}`;
+  if (activating === key) return;
+  activating = key;
   $('loading').hidden = false;
   document.querySelectorAll('.nav-item').forEach((b) => b.classList.toggle('active', b.dataset.id === def.id));
   $('scene-title').textContent = def.title;
@@ -68,22 +72,23 @@ async function activate(id) {
   stage.setClip(false);
   stage.simTime = 0;
   stage.controls.autoRotate = false;
+  stage.setBloomScale(1);
   setStatus('t = 0');
 
   const about = $('scene-about');
   about.replaceChildren();
   try {
     const mod = (await def.load()).default;
-    if (activating !== def.id) return;
+    if (activating !== key) return;
     about.append(el('h2', { text: def.group }));
     about.insertAdjacentHTML('beforeend', mod.about ?? '');
     if (mod.paperRef) about.append(el('div', { class: 'paper-ref', html: mod.paperRef }));
     const ctx = {
-      THREE, stage, root: stage.root, panel, assets, setStatus,
+      THREE, stage, root: stage.root, panel, assets, setStatus, query,
       legend: (items) => setLegend($('hud-legend'), items),
     };
     const instance = await mod.create(ctx);
-    if (activating !== def.id) { instance?.dispose?.(); return; }
+    if (activating !== key) { instance?.dispose?.(); return; }
     active = { def, instance, mod };
     debug.sceneId = def.id;
     debug.ready = true;
@@ -92,7 +97,7 @@ async function activate(id) {
     debug.errors.push(`${def.id}: ${err.message}`);
     about.append(el('p', { class: 'note', text: `This scene failed to load: ${err.message}` }));
   } finally {
-    if (activating === def.id) activating = null;
+    if (activating === key) activating = null;
     $('loading').hidden = true;
   }
 }
@@ -120,7 +125,7 @@ function setRunning(r) {
 playBtn.addEventListener('click', () => setRunning(!stage.running));
 $('btn-reset').addEventListener('click', () => {
   if (active?.instance?.reset) { active.instance.reset(); stage.simTime = 0; }
-  else if (active) { const id = active.def.id; active = null; activating = null; activate(id); }
+  else if (active) { active = null; activating = null; activate(location.hash.slice(1)); }
 });
 $('speed').addEventListener('input', (e) => { stage.speed = parseFloat(e.target.value); });
 const syncClip = () => stage.setClip($('clip-on').checked, parseFloat($('clip-pos').value));
