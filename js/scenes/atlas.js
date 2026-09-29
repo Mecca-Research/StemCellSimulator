@@ -9,7 +9,7 @@ import { RNG } from '../models/core/rng.js';
 import { LINEAGES, GERM_LAYERS, TISSUES, ORGANS, SYSTEMS, SYSTEM_LINKS, allCellTypes, morphology } from '../models/atlas/atlas.js';
 
 function starGeometry() {
-  const parts = [new THREE.IcosahedronGeometry(1, 2).toNonIndexed()];
+  const parts = [new THREE.IcosahedronGeometry(1, 2)]; // already non-indexed
   const dirs = [[1, 0.2, 0], [-0.8, 0.5, 0.3], [0.1, -1, 0.4], [0.2, 0.3, -1], [-0.3, -0.4, 1], [0.6, 0.9, 0.5]];
   for (const d of dirs) {
     const v = new THREE.Vector3(...d).normalize();

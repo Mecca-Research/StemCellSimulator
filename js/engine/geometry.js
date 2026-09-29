@@ -46,7 +46,13 @@ export function lobedNucleus(n = 4, r = 1, rng = Math.random) {
     }
     prev = next;
   }
-  const g = mergeGeometries(parts.map((x) => x.toNonIndexed()));
+  // weld each part so the lobes shade smoothly (the bridges keep their seams)
+  const welded = parts.map((x) => {
+    x.deleteAttribute('uv');
+    x.deleteAttribute('normal');
+    return mergeVertices(x);
+  });
+  const g = mergeGeometries(welded);
   g.center();
   g.computeVertexNormals();
   return g;
