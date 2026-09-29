@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "description": "Real microscopy used as reference and calibration data for the 3D models. Every entry is CC0 or public domain; SHA-256 pins match the scikit-image data registry. Raw files are downloaded by tools/fetch_micrographs.py into assets/raw/ (not committed); tools/build_assets.py derives the committed files under assets/derived/.",
+  "entries": [
+    {
+      "id": "hipsc-3d",
+      "file": "cells3d.tif",
+      "url": "https://gitlab.com/scikit-image/data/-/raw/2cdc5ce89b334d28f06a58c9f0ca21aa6992a5ba/cells3d.tif",
+      "sha256": "afc7c7d80d38bfde09788b4064ac1e64ec14e88454ab785ebdc8dbba5ca3b222",
+      "title": "3D confocal stack of a cell monolayer (membrane + nuclei)",
+      "modality": "3D confocal fluorescence, ZCYX (60, 2, 256, 256), voxel 0.29 x 0.26 x 0.26 um",
+      "credit": "Allen Institute for Cell Science, via the scikit-image data repository",
+      "license": "CC0-1.0",
+      "processes": [
+        "pluripotent colony",
+        "mitosis",
+        "3D cell shape",
+        "nuclear morphology"
+      ],
+      "used_for": "Digital-twin colony: 3D cell and nucleus meshes, volume rendering, calibration of cell/nucleus size, neighbour count and monolayer height"
+    },
+    {
+      "id": "human-mitosis",
+      "file": "AS_09125_050116030001_D03f00d0.tif",
+      "url": "https://gitlab.com/scikit-image/data/-/raw/2cdc5ce89b334d28f06a58c9f0ca21aa6992a5ba/AS_09125_050116030001_D03f00d0.tif",
+      "sha256": "2751ba667c4067c5d30817cff004aa06f6f6287f1cdbb5b8c9c6a500308cb456",
+      "title": "Human cells undergoing mitosis (DNA stain)",
+      "modality": "widefield fluorescence, 512 x 512",
+      "credit": "David Root / Jason Moffat, CellProfiler ExampleHuman (Moffat et al. 2006, Cell 124:1283, doi:10.1016/j.cell.2006.01.040)",
+      "license": "CC0-1.0",
+      "processes": [
+        "mitosis",
+        "self-renewal"
+      ],
+      "used_for": "Mitotic-index measurement that calibrates the division clock; gallery animation of self-renewal"
+    },
+    {
+      "id": "skin-he",
+      "file": "Normal_Epidermis_and_Dermis_with_Intradermal_Nevus_10x.JPG",
+      "url": "https://gitlab.com/scikit-image/data/-/raw/2cdc5ce89b334d28f06a58c9f0ca21aa6992a5ba/Normal_Epidermis_and_Dermis_with_Intradermal_Nevus_10x.JPG",
+      "sha256": "8759fe080509712163453f4b17106582b8513e73b0788d80160abf840e272075",
+      "title": "Normal epidermis and dermis (H&E, 10x)",
+      "modality": "brightfield histology (hematoxylin & eosin), 1280 x 960",
+      "credit": "Kilbad, Wikimedia Commons (File:Normal_Epidermis_and_Dermis_with_Intradermal_Nevus_10x.JPG)",
+      "license": "Public domain",
+      "processes": [
+        "tissue formation",
+        "stratified epithelium",
+        "ECM"
+      ],
+      "used_for": "Reference for the virtual H&E section render mode and the stratified-epithelium morphogenesis scene"
+    },
+    {
+      "id": "kidney-3d",
+      "file": "kidney-tissue-fluorescence.tif",
+      "url": "https://gitlab.com/scikit-image/data/-/raw/2cdc5ce89b334d28f06a58c9f0ca21aa6992a5ba/kidney-tissue-fluorescence.tif",
+      "sha256": "80c0799bc58b08cf6eaa53ecd202305eb42fd7bc73746cb6c5064dbeae7e8476",
+      "title": "Mouse kidney tissue, 3D multichannel confocal",
+      "modality": "3D confocal fluorescence, ZCYX (16, 3, 512, 512), voxel 1.25 x 1.24 x 1.24 um",
+      "credit": "Genevieve Buckley, Monash Micro Imaging (2018), via the scikit-image data repository",
+      "license": "CC0-1.0",
+      "processes": [
+        "organ formation",
+        "tubulogenesis",
+        "glomerulus"
+      ],
+      "used_for": "Organ-level 3D volume reference (nephron tubules and glomeruli) for the hierarchy and morphogenesis scenes"
+    },
+    {
+      "id": "npc-timelapse",
+      "file": "NPCsingleNucleus.tif",
+      "url": "https://gitlab.com/scikit-image/data/-/raw/2cdc5ce89b334d28f06a58c9f0ca21aa6992a5ba/NPCsingleNucleus.tif",
+      "sha256": "a8e24e8d187f33e92ee28508d5615286c850ca75374af7e74e527d290e8b06ea",
+      "title": "Live imaging of a protein re-localising to the nuclear envelope",
+      "modality": "time-lapse confocal, TCYX (15, 2, 180, 183)",
+      "credit": "Andrea Boni & Jan Ellenberg (Boni et al. 2015, J Cell Biol 209:705, doi:10.1083/jcb.201409133), via the scikit-image data repository",
+      "license": "CC0-1.0",
+      "processes": [
+        "nuclear translocation"
+      ],
+      "used_for": "Measured nuclear-envelope enrichment kinetics; the fitted time constant sets the nuclear-import step for NICD, beta-catenin, GLI and STAT in the single-cell 3D pathway scene"
+    },
+    {
+      "id": "single-cell-qpi",
+      "file": "cell.png",
+      "url": "https://gitlab.com/scikit-image/data/-/raw/5c090b56df3988d988ff97928e2ef2d2cbe38e1b/cell.png",
+      "sha256": "8d23a7fb81f7cc877cd09f330357fc7f595651306e84e17252f6e0a1b3f61515",
+      "title": "Single cell floating in saline (quantitative phase)",
+      "modality": "digital holographic quantitative phase image, 660 x 550, 0.107 um/px",
+      "credit": "Paul Mueller et al. (Optics Express 26:10729, 2018, doi:10.1364/OE.26.010729), via the scikit-image data repository",
+      "license": "CC0-1.0",
+      "processes": [
+        "single stem cell morphology"
+      ],
+      "used_for": "Reference for the suspended (rounded) cell shape used by the hematopoietic scene"
+    },
+    {
+      "id": "rbc-smear",
+      "file": "chula_rbc_1.jpg",
+      "url": "https://raw.githubusercontent.com/Chula-PIC-Lab/Chula-RBC-12-Dataset/main/Dataset/1.jpg",
+      "sha256": "2a8efd05b80339985c94bff5f2d6587e1e8093303e7af224a64675b5476c95e6",
+      "title": "Peripheral blood smear, normal erythrocytes (1000x)",
+      "modality": "brightfield, Nikon DS-Fi2-L3, 640 x 480",
+      "credit": "Chula PIC Lab, Chula-RBC-12-Dataset (Naruenatthanaset et al. 2021, arXiv:2012.01321)",
+      "license": "MIT",
+      "processes": [
+        "erythropoiesis",
+        "terminal differentiation"
+      ],
+      "used_for": "Erythrocyte size and central-pallor measurement that validates the Evans-Fung biconcave 3D red-cell model"
+    },
+    {
+      "id": "rbc-smear-labels",
+      "file": "chula_rbc_1.txt",
+      "url": "https://raw.githubusercontent.com/Chula-PIC-Lab/Chula-RBC-12-Dataset/main/Label/1.txt",
+      "sha256": "c4fb2543679d69b534cc460faabc4ea1395d77e7d717a327d1a7e62f275446ab",
+      "title": "Cell-centre annotations for rbc-smear (x y class)",
+      "modality": "text",
+      "credit": "Chula PIC Lab",
+      "license": "MIT",
+      "processes": [
+        "erythropoiesis"
+      ],
+      "used_for": "Seeds for per-cell measurement"
+    },
+    {
+      "id": "rbc-smear-lymphocyte",
+      "file": "chula_rbc_2.jpg",
+      "url": "https://raw.githubusercontent.com/Chula-PIC-Lab/Chula-RBC-12-Dataset/main/Dataset/2.jpg",
+      "sha256": "e59ea11e432aa318e59e5dc8ecbef1497a962a41a0c9701c1a91c3fd776b0ab2",
+      "title": "Blood smear with a lymphocyte among erythrocytes (1000x)",
+      "modality": "brightfield, 640 x 480",
+      "credit": "Chula PIC Lab, Chula-RBC-12-Dataset",
+      "license": "MIT",
+      "processes": [
+        "hematopoiesis",
+        "lymphopoiesis"
+      ],
+      "used_for": "Reference for the lymphoid end-state (large nucleus, thin cytoplasm rim) in the hematopoiesis scene"
+    },
+    {
+      "id": "rbc-smear-lymphocyte-labels",
+      "file": "chula_rbc_2.txt",
+      "url": "https://raw.githubusercontent.com/Chula-PIC-Lab/Chula-RBC-12-Dataset/main/Label/2.txt",
+      "sha256": "6a82b83c25469ff795b19c254979d9e562ae7397c9087aa469df867eaa1451a1",
+      "title": "Cell-centre annotations for rbc-smear-lymphocyte",
+      "modality": "text",
+      "credit": "Chula PIC Lab",
+      "license": "MIT",
+      "processes": [
+        "hematopoiesis"
+      ],
+      "used_for": "Seeds for per-cell measurement"
+    },
+    {
+      "id": "intestinal-organoids",
+      "file": "orgaquant_3.jpg",
+      "url": "https://raw.githubusercontent.com/TKassis/OrgaQuant/master/test_folder/3.jpg",
+      "sha256": "6713f20762aca47898a9772ee1c2571c0bf4a40150834eb5d83f2391b1789342",
+      "title": "Human intestinal organoids in 3D culture (bright field)",
+      "modality": "brightfield, 1500 x 1125",
+      "credit": "Timothy Kassis, OrgaQuant test data (Kassis et al. 2019, Sci Rep 9:12479, doi:10.1038/s41598-019-48874-y)",
+      "license": "MIT",
+      "processes": [
+        "organoid morphogenesis",
+        "lumen formation"
+      ],
+      "used_for": "Organoid size distribution (circle detection) for the 3D organoid morphogenesis scene"
+    }
+  ]
+}

@@ -1,0 +1,1566 @@
+{
+ "cells": [
+  {
+   "cell_centroid_um": [
+    52.885,
+    62.739,
+    7.781
+   ],
+   "cell_height_um": 8.99,
+   "cell_volume_um3": 1147.265,
+   "centroid_um": [
+    53.867,
+    64.028,
+    9.181
+   ],
+   "dna_brightness": 0.889,
+   "id": 1,
+   "mesh": {
+    "cell": {
+     "index_count": 5172,
+     "index_offset": 5184,
+     "vertex_count": 864,
+     "vertex_offset": 0
+    },
+    "nucleus": {
+     "index_count": 3876,
+     "index_offset": 19392,
+     "vertex_count": 644,
+     "vertex_offset": 15528
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.308,
+   "neighbours": [
+    3,
+    4,
+    5,
+    8
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      -0.029,
+      0.01,
+      1.0
+     ],
+     [
+      0.998,
+      0.048,
+      0.029
+     ],
+     [
+      0.048,
+      -0.999,
+      0.011
+     ]
+    ],
+    "semi_axes_um": [
+     6.84,
+     3.659,
+     3.376
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 270.065,
+   "solidity": 0.818,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    1.924,
+    52.834,
+    8.557
+   ],
+   "cell_height_um": 10.15,
+   "cell_volume_um3": 740.835,
+   "centroid_um": [
+    0.589,
+    48.579,
+    9.296
+   ],
+   "dna_brightness": 0.817,
+   "id": 2,
+   "mesh": {
+    "cell": {
+     "index_count": 4266,
+     "index_offset": 31422,
+     "vertex_count": 713,
+     "vertex_offset": 27144
+    },
+    "nucleus": {
+     "index_count": 804,
+     "index_offset": 40772,
+     "vertex_count": 136,
+     "vertex_offset": 39956
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.064,
+   "neighbours": [
+    7,
+    8,
+    20
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      -0.022,
+      0.998,
+      0.06
+     ],
+     [
+      -0.998,
+      -0.025,
+      0.051
+     ],
+     [
+      0.053,
+      -0.059,
+      0.997
+     ]
+    ],
+    "semi_axes_um": [
+     5.113,
+     2.636,
+     1.077
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 44.717,
+   "solidity": 0.774,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    46.043,
+    51.291,
+    9.235
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 3313.017,
+   "centroid_um": [
+    45.123,
+    52.39,
+    9.123
+   ],
+   "dna_brightness": 1.086,
+   "id": 3,
+   "mesh": {
+    "cell": {
+     "index_count": 10608,
+     "index_offset": 53000,
+     "vertex_count": 1770,
+     "vertex_offset": 42380
+    },
+    "nucleus": {
+     "index_count": 6876,
+     "index_offset": 81104,
+     "vertex_count": 1148,
+     "vertex_offset": 74216
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.402,
+   "neighbours": [
+    1,
+    4,
+    5,
+    8,
+    12,
+    13,
+    14
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      -0.006,
+      0.172,
+      0.985
+     ],
+     [
+      0.028,
+      0.985,
+      -0.172
+     ],
+     [
+      -1.0,
+      0.027,
+      -0.011
+     ]
+    ],
+    "semi_axes_um": [
+     8.224,
+     6.85,
+     4.091
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 950.363,
+   "solidity": 0.949,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    61.195,
+    56.47,
+    10.719
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 1944.325,
+   "centroid_um": [
+    63.562,
+    57.119,
+    9.721
+   ],
+   "dna_brightness": 1.336,
+   "id": 4,
+   "mesh": {
+    "cell": {
+     "index_count": 7368,
+     "index_offset": 102236,
+     "vertex_count": 1230,
+     "vertex_offset": 94856
+    },
+    "nucleus": {
+     "index_count": 4068,
+     "index_offset": 121052,
+     "vertex_count": 680,
+     "vertex_offset": 116972
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.303,
+   "neighbours": [
+    1,
+    3,
+    5,
+    13
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.134,
+      0.988,
+      -0.08
+     ],
+     [
+      0.975,
+      -0.146,
+      -0.168
+     ],
+     [
+      0.178,
+      0.055,
+      0.983
+     ]
+    ],
+    "semi_axes_um": [
+     6.536,
+     4.391,
+     4.107
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 451.951,
+   "solidity": 0.951,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    36.098,
+    60.074,
+    10.911
+   ],
+   "cell_height_um": 11.31,
+   "cell_volume_um3": 2377.103,
+   "centroid_um": [
+    34.176,
+    61.826,
+    9.513
+   ],
+   "dna_brightness": 1.142,
+   "id": 5,
+   "mesh": {
+    "cell": {
+     "index_count": 7872,
+     "index_offset": 137072,
+     "vertex_count": 1314,
+     "vertex_offset": 129188
+    },
+    "nucleus": {
+     "index_count": 5988,
+     "index_offset": 158816,
+     "vertex_count": 1000,
+     "vertex_offset": 152816
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.509,
+   "neighbours": [
+    1,
+    3,
+    4,
+    8,
+    14
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      -0.049,
+      -0.447,
+      -0.893
+     ],
+     [
+      -0.161,
+      0.886,
+      -0.435
+     ],
+     [
+      -0.986,
+      -0.122,
+      0.116
+     ]
+    ],
+    "semi_axes_um": [
+     8.344,
+     5.497,
+     4.419
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 802.019,
+   "solidity": 0.949,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    28.595,
+    20.106,
+    9.466
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 2909.077,
+   "centroid_um": [
+    28.999,
+    18.961,
+    9.589
+   ],
+   "dna_brightness": 0.884,
+   "id": 6,
+   "mesh": {
+    "cell": {
+     "index_count": 9180,
+     "index_offset": 179984,
+     "vertex_count": 1532,
+     "vertex_offset": 170792
+    },
+    "nucleus": {
+     "index_count": 5640,
+     "index_offset": 203996,
+     "vertex_count": 942,
+     "vertex_offset": 198344
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.338,
+   "neighbours": [
+    10,
+    12,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20,
+    22
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.069,
+      -0.735,
+      -0.674
+     ],
+     [
+      0.207,
+      -0.65,
+      0.731
+     ],
+     [
+      0.976,
+      0.19,
+      -0.107
+     ]
+    ],
+    "semi_axes_um": [
+     7.712,
+     5.402,
+     4.267
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 734.15,
+   "solidity": 0.949,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    11.033,
+    48.463,
+    9.873
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 2768.34,
+   "centroid_um": [
+    13.127,
+    47.538,
+    9.879
+   ],
+   "dna_brightness": 0.94,
+   "id": 7,
+   "mesh": {
+    "cell": {
+     "index_count": 9636,
+     "index_offset": 224924,
+     "vertex_count": 1608,
+     "vertex_offset": 215276
+    },
+    "nucleus": {
+     "index_count": 5904,
+     "index_offset": 250112,
+     "vertex_count": 986,
+     "vertex_offset": 244196
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.372,
+   "neighbours": [
+    2,
+    8,
+    14,
+    20,
+    22
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.085,
+      0.869,
+      -0.487
+     ],
+     [
+      0.108,
+      0.478,
+      0.872
+     ],
+     [
+      -0.991,
+      0.127,
+      0.053
+     ]
+    ],
+    "semi_axes_um": [
+     7.035,
+     5.948,
+     4.342
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 750.402,
+   "solidity": 0.939,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    17.55,
+    58.648,
+    9.661
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 4136.091,
+   "centroid_um": [
+    21.108,
+    57.665,
+    9.934
+   ],
+   "dna_brightness": 1.012,
+   "id": 8,
+   "mesh": {
+    "cell": {
+     "index_count": 12720,
+     "index_offset": 274652,
+     "vertex_count": 2122,
+     "vertex_offset": 261920
+    },
+    "nucleus": {
+     "index_count": 7584,
+     "index_offset": 307688,
+     "vertex_count": 1266,
+     "vertex_offset": 300092
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.36,
+   "neighbours": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    14,
+    20
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.001,
+      -0.715,
+      0.699
+     ],
+     [
+      0.165,
+      0.689,
+      0.706
+     ],
+     [
+      -0.986,
+      0.115,
+      0.119
+     ]
+    ],
+    "semi_axes_um": [
+     8.853,
+     6.82,
+     4.402
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 1095.432,
+   "solidity": 0.929,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    59.979,
+    11.591,
+    9.353
+   ],
+   "cell_height_um": 11.31,
+   "cell_volume_um3": 2255.519,
+   "centroid_um": [
+    59.322,
+    12.666,
+    9.904
+   ],
+   "dna_brightness": 0.864,
+   "id": 9,
+   "mesh": {
+    "cell": {
+     "index_count": 8262,
+     "index_offset": 331142,
+     "vertex_count": 1381,
+     "vertex_offset": 322856
+    },
+    "nucleus": {
+     "index_count": 5328,
+     "index_offset": 353008,
+     "vertex_count": 890,
+     "vertex_offset": 347668
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.411,
+   "neighbours": [
+    11,
+    12,
+    13,
+    17,
+    19,
+    21
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      -0.187,
+      -0.695,
+      -0.695
+     ],
+     [
+      0.154,
+      -0.719,
+      0.677
+     ],
+     [
+      0.97,
+      -0.02,
+      -0.242
+     ]
+    ],
+    "semi_axes_um": [
+     7.704,
+     5.253,
+     3.938
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 657.44,
+   "solidity": 0.935,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    41.73,
+    25.099,
+    10.349
+   ],
+   "cell_height_um": 11.31,
+   "cell_volume_um3": 2696.667,
+   "centroid_um": [
+    41.708,
+    25.178,
+    9.988
+   ],
+   "dna_brightness": 1.002,
+   "id": 10,
+   "mesh": {
+    "cell": {
+     "index_count": 8820,
+     "index_offset": 372508,
+     "vertex_count": 1474,
+     "vertex_offset": 363664
+    },
+    "nucleus": {
+     "index_count": 5628,
+     "index_offset": 395788,
+     "vertex_count": 940,
+     "vertex_offset": 390148
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.39,
+   "neighbours": [
+    6,
+    11,
+    12,
+    13,
+    14,
+    17,
+    19,
+    22
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.081,
+      0.794,
+      -0.602
+     ],
+     [
+      0.058,
+      0.6,
+      0.798
+     ],
+     [
+      -0.995,
+      0.1,
+      -0.002
+     ]
+    ],
+    "semi_axes_um": [
+     6.499,
+     6.187,
+     4.527
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 756.264,
+   "solidity": 0.932,
+   "touches_border": false
+  },
+  {
+   "cell_centroid_um": [
+    62.195,
+    25.766,
+    11.299
+   ],
+   "cell_height_um": 11.02,
+   "cell_volume_um3": 945.089,
+   "centroid_um": [
+    64.305,
+    26.432,
+    10.321
+   ],
+   "dna_brightness": 1.014,
+   "id": 11,
+   "mesh": {
+    "cell": {
+     "index_count": 4092,
+     "index_offset": 411136,
+     "vertex_count": 682,
+     "vertex_offset": 407044
+    },
+    "nucleus": {
+     "index_count": 3132,
+     "index_offset": 422464,
+     "vertex_count": 524,
+     "vertex_offset": 419320
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.454,
+   "neighbours": [
+    9,
+    10,
+    12,
+    13,
+    19
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.347,
+      0.938,
+      0.013
+     ],
+     [
+      0.867,
+      -0.315,
+      -0.385
+     ],
+     [
+      0.357,
+      -0.145,
+      0.923
+     ]
+    ],
+    "semi_axes_um": [
+     6.858,
+     3.903,
+     2.903
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 294.981,
+   "solidity": 0.922,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    48.538,
+    35.603,
+    9.82
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 3188.336,
+   "centroid_um": [
+    49.093,
+    36.866,
+    9.927
+   ],
+   "dna_brightness": 1.008,
+   "id": 12,
+   "mesh": {
+    "cell": {
+     "index_count": 9912,
+     "index_offset": 438652,
+     "vertex_count": 1654,
+     "vertex_offset": 428728
+    },
+    "nucleus": {
+     "index_count": 6624,
+     "index_offset": 465112,
+     "vertex_count": 1106,
+     "vertex_offset": 458476
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.392,
+   "neighbours": [
+    3,
+    6,
+    9,
+    10,
+    11,
+    13,
+    14,
+    19
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      -0.001,
+      -0.484,
+      0.875
+     ],
+     [
+      0.02,
+      0.875,
+      0.484
+     ],
+     [
+      -1.0,
+      0.018,
+      0.008
+     ]
+    ],
+    "semi_axes_um": [
+     8.158,
+     6.596,
+     4.067
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 898.236,
+   "solidity": 0.923,
+   "touches_border": false
+  },
+  {
+   "cell_centroid_um": [
+    60.703,
+    38.435,
+    9.882
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 2355.93,
+   "centroid_um": [
+    62.177,
+    38.048,
+    10.024
+   ],
+   "dna_brightness": 1.012,
+   "id": 13,
+   "mesh": {
+    "cell": {
+     "index_count": 8088,
+     "index_offset": 486448,
+     "vertex_count": 1348,
+     "vertex_offset": 478360
+    },
+    "nucleus": {
+     "index_count": 4944,
+     "index_offset": 507580,
+     "vertex_count": 826,
+     "vertex_offset": 502624
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.384,
+   "neighbours": [
+    3,
+    4,
+    9,
+    10,
+    11,
+    12,
+    19
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.138,
+      0.989,
+      0.05
+     ],
+     [
+      0.057,
+      -0.058,
+      0.997
+     ],
+     [
+      -0.989,
+      0.135,
+      0.064
+     ]
+    ],
+    "semi_axes_um": [
+     7.047,
+     5.404,
+     4.224
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 653.989,
+   "solidity": 0.941,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    29.306,
+    40.515,
+    10.222
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 3331.112,
+   "centroid_um": [
+    28.8,
+    40.938,
+    9.957
+   ],
+   "dna_brightness": 1.158,
+   "id": 14,
+   "mesh": {
+    "cell": {
+     "index_count": 10440,
+     "index_offset": 527920,
+     "vertex_count": 1742,
+     "vertex_offset": 517468
+    },
+    "nucleus": {
+     "index_count": 6204,
+     "index_offset": 555016,
+     "vertex_count": 1036,
+     "vertex_offset": 548800
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.331,
+   "neighbours": [
+    3,
+    5,
+    6,
+    7,
+    8,
+    10,
+    12,
+    20,
+    22
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.37,
+      0.724,
+      -0.582
+     ],
+     [
+      -0.026,
+      0.635,
+      0.772
+     ],
+     [
+      -0.928,
+      0.271,
+      -0.254
+     ]
+    ],
+    "semi_axes_um": [
+     6.998,
+     6.586,
+     4.324
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 827.857,
+   "solidity": 0.955,
+   "touches_border": false
+  },
+  {
+   "cell_centroid_um": [
+    21.025,
+    1.881,
+    11.137
+   ],
+   "cell_height_um": 10.73,
+   "cell_volume_um3": 577.005,
+   "centroid_um": [
+    21.034,
+    0.697,
+    10.417
+   ],
+   "dna_brightness": 0.856,
+   "id": 15,
+   "mesh": {
+    "cell": {
+     "index_count": 2976,
+     "index_offset": 570412,
+     "vertex_count": 498,
+     "vertex_offset": 567424
+    },
+    "nucleus": {
+     "index_count": 1224,
+     "index_offset": 577600,
+     "vertex_count": 206,
+     "vertex_offset": 576364
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.138,
+   "neighbours": [
+    16,
+    17,
+    18
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.164,
+      0.014,
+      0.986
+     ],
+     [
+      0.986,
+      0.033,
+      -0.164
+     ],
+     [
+      0.035,
+      -0.999,
+      0.008
+     ]
+    ],
+    "semi_axes_um": [
+     4.867,
+     3.245,
+     1.245
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 69.869,
+   "solidity": 0.895,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    6.287,
+    7.159,
+    10.256
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 2167.634,
+   "centroid_um": [
+    6.332,
+    4.788,
+    10.303
+   ],
+   "dna_brightness": 0.86,
+   "id": 16,
+   "mesh": {
+    "cell": {
+     "index_count": 6552,
+     "index_offset": 586612,
+     "vertex_count": 1094,
+     "vertex_offset": 580048
+    },
+    "nucleus": {
+     "index_count": 5244,
+     "index_offset": 604972,
+     "vertex_count": 876,
+     "vertex_offset": 599716
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.445,
+   "neighbours": [
+    6,
+    15,
+    18,
+    22
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.019,
+      0.827,
+      0.562
+     ],
+     [
+      0.505,
+      0.477,
+      -0.719
+     ],
+     [
+      -0.863,
+      0.298,
+      -0.408
+     ]
+    ],
+    "semi_axes_um": [
+     7.032,
+     5.939,
+     4.072
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 667.438,
+   "solidity": 0.873,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    38.329,
+    5.957,
+    10.881
+   ],
+   "cell_height_um": 11.31,
+   "cell_volume_um3": 2201.745,
+   "centroid_um": [
+    39.272,
+    4.65,
+    10.954
+   ],
+   "dna_brightness": 0.899,
+   "id": 17,
+   "mesh": {
+    "cell": {
+     "index_count": 6456,
+     "index_offset": 621928,
+     "vertex_count": 1078,
+     "vertex_offset": 615460
+    },
+    "nucleus": {
+     "index_count": 5676,
+     "index_offset": 640528,
+     "vertex_count": 948,
+     "vertex_offset": 634840
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.557,
+   "neighbours": [
+    6,
+    9,
+    10,
+    15,
+    18,
+    19,
+    21
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.133,
+      0.067,
+      0.989
+     ],
+     [
+      0.528,
+      0.84,
+      -0.128
+     ],
+     [
+      -0.839,
+      0.539,
+      0.076
+     ]
+    ],
+    "semi_axes_um": [
+     6.863,
+     6.425,
+     4.39
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 787.963,
+   "solidity": 0.943,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    21.444,
+    8.111,
+    9.721
+   ],
+   "cell_height_um": 11.31,
+   "cell_volume_um3": 2061.694,
+   "centroid_um": [
+    20.889,
+    8.422,
+    10.005
+   ],
+   "dna_brightness": 0.904,
+   "id": 18,
+   "mesh": {
+    "cell": {
+     "index_count": 7428,
+     "index_offset": 659320,
+     "vertex_count": 1240,
+     "vertex_offset": 651880
+    },
+    "nucleus": {
+     "index_count": 5352,
+     "index_offset": 679540,
+     "vertex_count": 894,
+     "vertex_offset": 674176
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.489,
+   "neighbours": [
+    6,
+    15,
+    16,
+    17,
+    19,
+    22
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.13,
+      0.307,
+      -0.943
+     ],
+     [
+      0.143,
+      0.935,
+      0.324
+     ],
+     [
+      -0.981,
+      0.177,
+      -0.078
+     ]
+    ],
+    "semi_axes_um": [
+     7.638,
+     4.926,
+     4.411
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 676.848,
+   "solidity": 0.941,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    48.718,
+    13.592,
+    10.026
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 2338.444,
+   "centroid_um": [
+    47.228,
+    12.689,
+    10.59
+   ],
+   "dna_brightness": 0.998,
+   "id": 19,
+   "mesh": {
+    "cell": {
+     "index_count": 10440,
+     "index_offset": 700696,
+     "vertex_count": 1742,
+     "vertex_offset": 690244
+    },
+    "nucleus": {
+     "index_count": 5388,
+     "index_offset": 726976,
+     "vertex_count": 900,
+     "vertex_offset": 721576
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.421,
+   "neighbours": [
+    6,
+    9,
+    10,
+    11,
+    12,
+    13,
+    17,
+    18,
+    21
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.218,
+      0.177,
+      0.96
+     ],
+     [
+      0.385,
+      0.888,
+      -0.251
+     ],
+     [
+      -0.897,
+      0.424,
+      0.125
+     ]
+    ],
+    "semi_axes_um": [
+     6.666,
+     6.017,
+     4.181
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 692.394,
+   "solidity": 0.931,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    9.664,
+    35.568,
+    10.526
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 3070.202,
+   "centroid_um": [
+    10.951,
+    35.826,
+    10.583
+   ],
+   "dna_brightness": 1.088,
+   "id": 20,
+   "mesh": {
+    "cell": {
+     "index_count": 10356,
+     "index_offset": 748132,
+     "vertex_count": 1730,
+     "vertex_offset": 737752
+    },
+    "nucleus": {
+     "index_count": 6888,
+     "index_offset": 775744,
+     "vertex_count": 1150,
+     "vertex_offset": 768844
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.439,
+   "neighbours": [
+    2,
+    6,
+    7,
+    8,
+    14,
+    22
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      -0.144,
+      0.002,
+      -0.99
+     ],
+     [
+      -0.737,
+      -0.668,
+      0.106
+     ],
+     [
+      -0.661,
+      0.744,
+      0.098
+     ]
+    ],
+    "semi_axes_um": [
+     9.372,
+     5.822,
+     4.257
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 936.679,
+   "solidity": 0.928,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    57.143,
+    3.075,
+    11.402
+   ],
+   "cell_height_um": 11.02,
+   "cell_volume_um3": 919.016,
+   "centroid_um": [
+    54.116,
+    1.077,
+    11.315
+   ],
+   "dna_brightness": 0.851,
+   "id": 21,
+   "mesh": {
+    "cell": {
+     "index_count": 4242,
+     "index_offset": 793774,
+     "vertex_count": 709,
+     "vertex_offset": 789520
+    },
+    "nucleus": {
+     "index_count": 1644,
+     "index_offset": 803916,
+     "vertex_count": 276,
+     "vertex_offset": 802260
+    }
+   },
+   "mitotic": false,
+   "nc_ratio": 0.115,
+   "neighbours": [
+    9,
+    17,
+    19
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.365,
+      0.015,
+      -0.931
+     ],
+     [
+      0.931,
+      0.01,
+      0.365
+     ],
+     [
+      -0.014,
+      1.0,
+      0.01
+     ]
+    ],
+    "semi_axes_um": [
+     4.845,
+     3.529,
+     1.725
+    ]
+   },
+   "nucleus_touches_border": true,
+   "nucleus_volume_um3": 94.962,
+   "solidity": 0.852,
+   "touches_border": true
+  },
+  {
+   "cell_centroid_um": [
+    11.504,
+    22.115,
+    10.003
+   ],
+   "cell_height_um": 11.6,
+   "cell_volume_um3": 3946.266,
+   "centroid_um": [
+    13.928,
+    22.663,
+    11.5
+   ],
+   "dna_brightness": 1.511,
+   "id": 22,
+   "mesh": {
+    "cell": {
+     "index_count": 10860,
+     "index_offset": 818112,
+     "vertex_count": 1818,
+     "vertex_offset": 807204
+    },
+    "nucleus": {
+     "index_count": 6744,
+     "index_offset": 846588,
+     "vertex_count": 1126,
+     "vertex_offset": 839832
+    }
+   },
+   "mitotic": true,
+   "nc_ratio": 0.224,
+   "neighbours": [
+    6,
+    7,
+    10,
+    14,
+    16,
+    18,
+    20
+   ],
+   "nucleus": {
+    "axes_zyx": [
+     [
+      0.216,
+      -0.87,
+      0.444
+     ],
+     [
+      -0.966,
+      -0.122,
+      0.23
+     ],
+     [
+      -0.145,
+      -0.478,
+      -0.866
+     ]
+    ],
+    "semi_axes_um": [
+     7.772,
+     7.135,
+     3.603
+    ]
+   },
+   "nucleus_touches_border": false,
+   "nucleus_volume_um3": 721.329,
+   "solidity": 0.747,
+   "touches_border": true
+  }
+ ],
+ "extent_xyz_um": [
+  66.56,
+  66.56,
+  17.4
+ ],
+ "meshes": {
+  "file": "hipsc_meshes.bin",
+  "index": "uint16 triangle list",
+  "quant_box_um": [
+   70.56,
+   70.56,
+   21.4
+  ],
+  "quant_origin_um": [
+   -2.0,
+   -2.0,
+   -2.0
+  ],
+  "vertex": "uint16 xyz, um = origin + q / 65535 * box"
+ },
+ "mosaic": {
+  "channels": {
+   "g": "dna",
+   "r": "membrane"
+  },
+  "cols": 8,
+  "file": "hipsc_volume.jpg",
+  "label_code": "cell id | 128 * inside-nucleus",
+  "labels": "hipsc_labels.png",
+  "slices": 60,
+  "tile": [
+   256,
+   256
+  ]
+ },
+ "shape_zyx": [
+  60,
+  256,
+  256
+ ],
+ "source": "cells3d.tif (Allen Institute for Cell Science, CC0)",
+ "spacing_zyx_um": [
+  0.29,
+  0.26,
+  0.26
+ ],
+ "summary": {
+  "areal_density_per_100um2": 0.497,
+  "cell_height_um_median": 11.6,
+  "cell_radius_um_equiv": 9.13,
+  "cell_volume_um3_median": 3188.336,
+  "n_cells": 22,
+  "n_interior": 3,
+  "n_mitotic": 1,
+  "n_whole_nuclei": 11,
+  "nc_ratio_median": 0.39,
+  "neighbours_mean_interior": 8.333,
+  "nn_distance_um_median": 13.016,
+  "nucleus_radius_um_equiv": 5.652,
+  "nucleus_semi_axes_um_median": [
+   7.704,
+   6.017,
+   4.267
+  ],
+  "nucleus_volume_um3_median": 756.264
+ }
+}

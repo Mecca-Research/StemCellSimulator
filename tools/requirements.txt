@@ -1,0 +1,8 @@
+# Data pipeline (tools/build_assets.py). Pinned for bit-reproducible outputs.
+numpy==2.4.6
+scipy==1.17.1
+scikit-image==0.26.0
+Pillow==12.3.0
+tifffile==2026.3.3
+# tests
+pytest>=8

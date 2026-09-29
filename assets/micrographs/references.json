@@ -1,0 +1,748 @@
+{
+ "schema": 1,
+ "description": "Further openly licensed reference micrographs for each process, catalogued but NOT redistributed in this repository. Wikimedia Commons licence fields were gathered from search-index summaries of each file page and must be re-confirmed on the page before any image is downloaded or reused; eLife licences were read from the article XML. Hosts other than GitHub/GitLab were unreachable from the build environment. Entries marked 'non-commercial only' must not be used commercially.",
+ "entries": [
+  {
+   "id": "commons-hipsc-colony-nih",
+   "process": [
+    "pluripotency"
+   ],
+   "title": "Human induced pluripotent stem cell colony (51816035910).jpg",
+   "description": "Human iPSC colony from the NIH Image Gallery (NEI patient-derived iPSC work, per the indexed caption). Compact, sharp-edged pluripotent colony morphology. Serves process 1.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Human_induced_pluripotent_stem_cell_colony_(51816035910).jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Human_induced_pluripotent_stem_cell_colony_(51816035910).jpg",
+   "author": "NIH Image Gallery (Flickr import, published 2022-01-11)",
+   "license": "Public Domain Mark 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-hesc-colonies-and-neurons",
+   "process": [
+    "pluripotency",
+    "neurogenesis"
+   ],
+   "title": "Human embryonic stem cells.png",
+   "description": "Two panels: (A) undifferentiated human ESC colonies, (B) neurons differentiated from hESCs. Serves processes 1 and 4.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Human_embryonic_stem_cells.png",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Human_embryonic_stem_cells.png",
+   "author": "PLoS Biology figure; credit line not captured (see file page)",
+   "license": "CC BY 2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5/",
+   "width": null,
+   "height": null,
+   "notes": "License stated on the derivative 'only A' page as 'derivative of Human_embryonic_stem_cells.png licensed with Cc-by-2.5'. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-hesc-colony-only-a",
+   "process": [
+    "pluripotency"
+   ],
+   "title": "Human embryonic stem cells only A.png",
+   "description": "Crop of panel A only: undifferentiated human ESC colonies. Serves process 1.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Human_embryonic_stem_cells_only_A.png",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Human_embryonic_stem_cells_only_A.png",
+   "author": "Derivative of a PLoS Biology figure; credit line not captured",
+   "license": "CC BY 2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5/",
+   "width": 1010,
+   "height": 752,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-mesc-nsf",
+   "process": [
+    "pluripotency"
+   ],
+   "title": "Mouse embryonic stem cells.jpg",
+   "description": "Mouse embryonic stem cells (US NSF image; the page gives the staining and marker details). Serves process 1.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Mouse_embryonic_stem_cells.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Mouse_embryonic_stem_cells.jpg",
+   "author": "US National Science Foundation (page has no machine-readable author)",
+   "license": "Public domain (PD-USGov-NSF)",
+   "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NSF",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-metaphase-if",
+   "process": [
+    "mitosis"
+   ],
+   "title": "MetaphaseIF.jpg",
+   "description": "Immunofluorescence micrograph of an animal cell in metaphase with chromosomes aligned on the spindle. Serves process 2.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:MetaphaseIF.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/MetaphaseIF.jpg",
+   "author": "Roy van Heesbeen (per index)",
+   "license": "Public domain (PD-self)",
+   "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+   "width": null,
+   "height": null,
+   "notes": "Part of a 2008 stage series (ProphaseIF.jpg, Anaphase_IF.jpg, TelophaseIF.jpg). Licenses for those were NOT captured, so check each before use. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-sem-rbc-platelet-wbc",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Red White Blood cells.jpg",
+   "description": "SEM of a red blood cell (left), platelet (centre) and white blood cell (right). Serves process 3.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Red_White_Blood_cells.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Red_White_Blood_cells.jpg",
+   "author": "Electron Microscopy Facility, NCI-Frederick (uploaded to nl.wikipedia by Svdmolen, 2004)",
+   "license": "Public domain (per file page; sourced from NCI-Frederick web site)",
+   "license_url": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+   "width": 500,
+   "height": 326,
+   "notes": "Low resolution. NCI Visuals Online imageid=2129 may hold a larger public-domain original; its license was not verified. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-normal-blood-smear-giemsa",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Normal Adult Blood Smear.JPG",
+   "description": "Giemsa-stained blood smear from a healthy adult showing platelets, white cells and red cells. Serves process 3.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Normal_Adult_Blood_Smear.JPG",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Normal_Adult_Blood_Smear.JPG",
+   "author": "Not captured (see file page)",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "width": 1280,
+   "height": 960,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-megakaryocyte-marrow",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Megakaryocyte in bone marrow.jpg",
+   "description": "Megakaryocyte in a bone-marrow preparation. Serves process 3 (thrombopoiesis).",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Megakaryocyte_in_bone_marrow.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Megakaryocyte_in_bone_marrow.jpg",
+   "author": "Animalculist",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-trilineage-hematopoiesis",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Trilineage hematopoiesis, annotated.jpg",
+   "description": "Annotated bone-marrow histology showing erythroid, granulocytic and megakaryocytic lineages together. Serves process 3.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Trilineage_hematopoiesis,_annotated.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Trilineage_hematopoiesis,_annotated.jpg",
+   "author": "Mikael Häggström",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "width": null,
+   "height": null,
+   "notes": "An unannotated 'Trilineage hematopoiesis (original).jpg' also exists; its license was not captured. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-band-neutrophil",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Band form neutrophil in Wright stained PBS microscopy.jpg",
+   "description": "Band-form (immature) neutrophil in a Wright-stained peripheral blood smear. Serves process 3 (granulopoiesis).",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Band_form_neutrophil_in_Wright_stained_PBS_microscopy.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Band_form_neutrophil_in_Wright_stained_PBS_microscopy.jpg",
+   "author": "Not captured (see file page)",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-nucleated-rbc",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Nucleated red blood cell (RBC) in a Wright's stained peripheral blood smear (PBS) microscopy of an aplastic anemia patient.jpg",
+   "description": "Nucleated red blood cell (erythroblast before enucleation) in a Wright-stained smear. Serves process 3 (erythropoiesis).",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Nucleated_red_blood_cell_(RBC)_in_a_Wright's_stained_peripheral_blood_smear_(PBS)_microscopy_of_an_aplastic_anemia_patient.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Nucleated_red_blood_cell_(RBC)_in_a_Wright%27s_stained_peripheral_blood_smear_(PBS)_microscopy_of_an_aplastic_anemia_patient.jpg",
+   "author": "Not captured (see file page)",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "Comes from a patient with aplastic anemia, so it is pathological context. License came from a category-level search summary, so confidence is lower. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-orthochromatic-erythroblast",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Orthochromatic erythroblast.png",
+   "description": "Orthochromatic erythroblast (last nucleated stage before enucleation). Sibling files exist: Basophilic_erythroblast.png and Polychromatic_erythroblast.png. Serves process 3.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Orthochromatic_erythroblast.png",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Orthochromatic_erythroblast.png",
+   "author": "No machine-readable author on page",
+   "license": "CC BY-SA 3.0 (migrated) + GFDL",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "width": null,
+   "height": null,
+   "notes": "Check that it is a real micrograph crop and not a drawing. Author and source are missing on the page. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-neuron-tissue-culture",
+   "process": [
+    "neurogenesis"
+   ],
+   "title": "Neuron in tissue culture.jpg",
+   "description": "Cultured neuron stained to reveal its extensive filament/neurite network. Serves process 4.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Neuron_in_tissue_culture.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Neuron_in_tissue_culture.jpg",
+   "author": "GerryShaw",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-rat-brain-map2-neurofilament",
+   "process": [
+    "neurogenesis"
+   ],
+   "title": "Culture of rat brain cells stained with antibody to MAP2 (green), Neurofilament (red) and DNA (blue).jpg",
+   "description": "Rat brain cell culture: MAP2 (green, dendrites), neurofilament (red, axons), DNA (blue). Serves process 4.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Culture_of_rat_brain_cells_stained_with_antibody_to_MAP2_(green),_Neurofilament_(red)_and_DNA_(blue).jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Culture_of_rat_brain_cells_stained_with_antibody_to_MAP2_(green),_Neurofilament_(red)_and_DNA_(blue).jpg",
+   "author": "GerryShaw",
+   "license": "GFDL + CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-myoblast-fusion",
+   "process": [
+    "myogenesis"
+   ],
+   "title": "Myoblast Fusion - Myogenesis.jpg",
+   "description": "Micrograph illustrating myoblast fusion during myogenesis (the page has imaging details). Serves process 5.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Myoblast_Fusion_-_Myogenesis.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Myoblast_Fusion_-_Myogenesis.jpg",
+   "author": "US federal government work; person not captured",
+   "license": "Public Domain Mark 1.0 (US federal work)",
+   "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-skeletal-striated-muscle",
+   "process": [
+    "myogenesis"
+   ],
+   "title": "Skeletal striated muscle.jpg",
+   "description": "Light micrograph (histology) of skeletal striated muscle. Serves process 5.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Skeletal_striated_muscle.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Skeletal_striated_muscle.jpg",
+   "author": "Nephron",
+   "license": "CC BY-SA 3.0 + GFDL",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-skeletal-muscle-bcc",
+   "process": [
+    "myogenesis"
+   ],
+   "title": "Muscle Tissue Cross Section Whole Skeletal Muscle (41915835902).jpg",
+   "description": "Skeletal muscle bundles in longitudinal and cross section at 400x (teaching slide). Serves process 5.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Muscle_Tissue_Cross_Section_Whole_Skeletal_Muscle_(41915835902).jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Muscle_Tissue_Cross_Section_Whole_Skeletal_Muscle_(41915835902).jpg",
+   "author": "Berkshire Community College Bioscience Image Library",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-intestinal-organoid",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "Intestinal organoid.PNG",
+   "description": "Intestinal organoid micrograph. Serves process 6.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Intestinal_organoid.PNG",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Intestinal_organoid.PNG",
+   "author": "Not captured (see file page)",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": 1148,
+   "height": 1106,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-human-brain-organoid",
+   "process": [
+    "morphogenesis",
+    "neurogenesis"
+   ],
+   "title": "Human Brain Organoid.jpg",
+   "description": "Human cerebral (brain) organoid stained with DAPI (teal) and VIPR2 (magenta). Wiki Science Competition 2023 (USA) microscopy finalist. Serves processes 6 and 4.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Human_Brain_Organoid.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Human_Brain_Organoid.jpg",
+   "author": "Not captured (see file page)",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-human-embryo-8-cell",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "Embryo, 8 cells.jpg",
+   "description": "Human embryo at the 8-cell cleavage stage. Serves process 6 (pre-blastocyst cleavage).",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Embryo,_8_cells.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Embryo,_8_cells.jpg",
+   "author": "Ekem",
+   "license": "Public domain (released by author for any purpose)",
+   "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+   "width": null,
+   "height": null,
+   "notes": "The same uploader has 'Blastocyst, day 5.JPG', but its license was not captured, so it is left out. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-collagen-type1-tem",
+   "process": [
+    "ecm"
+   ],
+   "title": "Fibers of Collagen Type I - TEM.jpg",
+   "description": "TEM of a thin section of mammalian lung showing type I collagen fibres. Serves process 8.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Fibers_of_Collagen_Type_I_-_TEM.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Fibers_of_Collagen_Type_I_-_TEM.jpg",
+   "author": "Not captured (see file page)",
+   "license": "Public domain",
+   "license_url": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+   "width": 640,
+   "height": 480,
+   "notes": "Low resolution. Check that D-banding is resolved at this size. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-heart-muscle-histology",
+   "process": [
+    "tissue_epithelium_cardio_hepato"
+   ],
+   "title": "Histology heart muscle.jpg",
+   "description": "Cardiac muscle (cardiomyocyte) histology micrograph. Serves process 9.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Histology_heart_muscle.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Histology_heart_muscle.jpg",
+   "author": "Dankie127",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-hepatocyte-histology",
+   "process": [
+    "tissue_epithelium_cardio_hepato"
+   ],
+   "title": "Histology of hepatocyte lipofuscin.jpg",
+   "description": "Liver histology showing hepatocytes, some with lipofuscin pigment. Serves process 9.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Histology_of_hepatocyte_lipofuscin.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Histology_of_hepatocyte_lipofuscin.jpg",
+   "author": "Mikael Häggström",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "width": null,
+   "height": null,
+   "notes": "The lipofuscin pigment is age-related, so this is not a pristine normal-liver reference. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-mef-actin",
+   "process": [
+    "ecm"
+   ],
+   "title": "MEF microfilaments.jpg",
+   "description": "Mouse embryonic fibroblasts with phalloidin-stained actin stress fibres. Serves process 8 (fibroblasts).",
+   "file_page": "https://commons.wikimedia.org/wiki/File:MEF_microfilaments.jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/MEF_microfilaments.jpg",
+   "author": "Y tambe",
+   "license": "GFDL + CC BY-SA 3.0-migrated/2.5/2.0/1.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-muntjac-fibroblasts",
+   "process": [
+    "ecm"
+   ],
+   "title": "Indian Muntjac fibroblast cells (24271618921).jpg",
+   "description": "Indian muntjac skin fibroblasts: DAPI nuclei, Alexa Fluor 488 phalloidin actin, MitoTracker Red CMXRos (ZEISS ApoTome.2). Serves process 8.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Indian_Muntjac_fibroblast_cells_(24271618921).jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Indian_Muntjac_fibroblast_cells_(24271618921).jpg",
+   "author": "ZEISS Microscopy (Flickr); sample courtesy Michael W. Davidson",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-stratified-squamous-bcc",
+   "process": [
+    "tissue_epithelium_cardio_hepato"
+   ],
+   "title": "Epithelial Tissues Stratified Squamous Epithelium (40230842160).jpg",
+   "description": "Cross section of stratified squamous epithelium (teaching slide). Serves process 9.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Stratified_Squamous_Epithelium_(40230842160).jpg",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Epithelial_Tissues_Stratified_Squamous_Epithelium_(40230842160).jpg",
+   "author": "Berkshire Community College Bioscience Image Library",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "width": null,
+   "height": null,
+   "notes": "[Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "commons-neurosphere-assembly-video",
+   "process": [
+    "neurogenesis"
+   ],
+   "title": "Assembling-Neurospheres-Dynamics-of-Neural-ProgenitorStem-Cell-Aggregation-Probed-Using-an-Optical-pone.0038613.s003.ogv",
+   "description": "Supplementary video: neural progenitor/stem cells aggregating into neurospheres, probed with an optical trap. Siblings s010 and s012 also exist. Serves process 4.",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Assembling-Neurospheres-Dynamics-of-Neural-ProgenitorStem-Cell-Aggregation-Probed-Using-an-Optical-pone.0038613.s003.ogv",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Assembling-Neurospheres-Dynamics-of-Neural-ProgenitorStem-Cell-Aggregation-Probed-Using-an-Optical-pone.0038613.s003.ogv",
+   "author": "Ladiwala U, Basu H, Mathur D (PLoS ONE 2012, 7(6):e38613)",
+   "license": "CC BY (PLoS ONE open-access; exact version on the Commons tag not captured)",
+   "license_url": "https://creativecommons.org/licenses/",
+   "width": null,
+   "height": null,
+   "notes": "This is a video (.ogv), not a still image. A sibling clip is 512x384. [Commons: license/author/dims from search index of file page, not direct fetch; URL from MD5 path; re-confirm on page]"
+  },
+  {
+   "id": "elife-05125-fig1-zebrafish-stripes-leopard",
+   "process": [
+    "turing_pattern"
+   ],
+   "title": "eLife 2014;3:e05125 Figure 1 - The leo mutant phenotype",
+   "description": "Wild-type adult zebrafish stripes (melanophores in stripes, xanthophores in interstripes) next to leopard (Cx41.8) mutants whose stripes break into spots. The canonical Turing-type reference. Serves process 7.",
+   "file_page": "https://elifesciences.org/articles/05125/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:05125%2Felife-05125-fig1-v2.tif/full/full/0/default.jpg",
+   "author": "Irion U, Frohnhöfer HG, Krauss J, et al. (Nüsslein-Volhard lab)",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-05125-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-12401-fig1s1-pigment-pattern-development",
+   "process": [
+    "turing_pattern"
+   ],
+   "title": "eLife 2015;4:e12401 Figure 1-figure supplement 1 - Developing adult pigment patterns",
+   "description": "Stripe and interstripe emerging in metamorphic zebrafish (7.5 SSL) compared with the pearl mutant. Useful for pattern-formation time courses. Serves process 7.",
+   "file_page": "https://elifesciences.org/articles/12401/figures#fig1s1",
+   "download_url": "https://iiif.elifesciences.org/lax:12401%2Felife-12401-fig1-figsupp1-v2.tif/full/full/0/default.jpg",
+   "author": "Eom DS, Bain EJ, Patterson LB, Grout ME, Parichy DM",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-12401-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-61635-fig2-eve-seven-stripes",
+   "process": [
+    "morphogen_gradient"
+   ],
+   "title": "eLife 2020;9:e61635 Figure 2 - Live expression of even-skipped",
+   "description": "Maximum-projection stills of a live Drosophila embryo showing all seven even-skipped stripes (MS2 live transcription). Serves process 7.",
+   "file_page": "https://elifesciences.org/articles/61635/figures#fig2",
+   "download_url": "https://iiif.elifesciences.org/lax:61635%2Felife-61635-fig2-v2.tif/full/full/0/default.jpg",
+   "author": "Berrocal A, Lammers NC, Garcia HG, Eisen MB",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "The figure panels are movie stills. Supplementary videos are also CC BY 4.0. [eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-61635-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-26258-fig1-bicoid-gap-genes",
+   "process": [
+    "morphogen_gradient"
+   ],
+   "title": "eLife 2017;6:e26258 Figure 1 - Optogenetic manipulation of Bicoid-dependent transcription",
+   "description": "Drosophila blastoderm embryos immunostained for Bicoid targets Hunchback, Giant, Knirps and Krüppel (dark vs light vs bcd-/-). Shows gap-gene domains read out from the Bicoid gradient. Serves process 7.",
+   "file_page": "https://elifesciences.org/articles/26258/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:26258%2Felife-26258-fig1-v2.tif/full/full/0/default.jpg",
+   "author": "Huang A, Amourda C, Zhang S, Tolwinski NS, Saunders TE",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "The XML graphic href has no .tif extension; .tif was appended per eLife convention. [eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-26258-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-53638-fig1-sens-sop-pattern",
+   "process": [
+    "notch_lateral_inhibition"
+   ],
+   "title": "eLife 2020;9:e53638 Figure 1 - Sens expression during sensory organ fate selection",
+   "description": "Senseless immunofluorescence in the Drosophila wing disc. Two proneural stripes refine into a periodic pattern of sensory-organ-precursor cells via Notch lateral inhibition. Serves process 10.",
+   "file_page": "https://elifesciences.org/articles/53638/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:53638%2Felife-53638-fig1-v2.tif/full/full/0/default.jpg",
+   "author": "Giri R, Papadopoulos DK, Posadas DM, Potluri HK, Tomancak P, Mani M, et al.",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "Wing-margin SOPs, not notum microchaete rows. [eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-53638-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-47613-fig6-cochlear-hair-cell-patterning",
+   "process": [
+    "notch_lateral_inhibition"
+   ],
+   "title": "eLife 2019;8:e47613 Figure 6 - Activin signaling is required for patterning and maturation of hair cells",
+   "description": "Apical-surface views of mouse cochlear hair cells (base/mid/apex) in control vs follistatin-overexpressing cochleae. Shows the inner/outer hair-cell mosaic. Serves process 10.",
+   "file_page": "https://elifesciences.org/articles/47613/figures#fig6",
+   "download_url": "https://iiif.elifesciences.org/lax:47613%2Felife-47613-fig6-v1.tif/full/full/0/default.jpg",
+   "author": "Prajapati-DiNubila M, Benito-Gonzalez A, Golden EJ, Zhang S, Doetzlhofer A",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-47613-v1.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-72419-fig1-c2c12-myoblast-fusion",
+   "process": [
+    "myogenesis"
+   ],
+   "title": "eLife 2021;10:e72419 Figure 1 - Cellular projections on differentiating muscle cells participate in fusion",
+   "description": "Live confocal imaging of differentiating myoblasts/myotubes (day 5; RFP-CAAX/GFP-CAAX membranes) showing filopodia/projections that participate in myoblast fusion. Serves process 5.",
+   "file_page": "https://elifesciences.org/articles/72419/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:72419%2Felife-72419-fig1-v2.tif/full/full/0/default.jpg",
+   "author": "Hammers DW, Hart CC, Matheny MK, Heimsath EG, Lee YI, Hammer JA, et al.",
+   "license": "CC0 1.0 (public domain)",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-72419-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-61358-fig1-zebrafish-somite-boundaries",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "eLife 2021;10:e61358 Figure 1 - Segment boundary defects in DAPT washout embryos",
+   "description": "Zebrafish embryos showing somite boundaries (normal vs defective after Notch inhibition/washout). Segmentation-clock reference. Serves process 6.",
+   "file_page": "https://elifesciences.org/articles/61358/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:61358%2Felife-61358-fig1-v2.tif/full/full/0/default.jpg",
+   "author": "Uriu K, Liao BK, Oates AC, Morelli LG",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-61358-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-42434-fig1-mouse-gastrulation-mesoderm",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "eLife 2019;8:e42434 Figure 1 - Live imaging of nascent mesoderm migration",
+   "description": "Two-photon live imaging of a gastrulating mouse embryo with mosaic membrane-GFP in nascent mesoderm; primitive streak and migrating mesoderm visible. Serves process 6.",
+   "file_page": "https://elifesciences.org/articles/42434/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:42434%2Felife-42434-fig1-v1.tif/full/full/0/default.jpg",
+   "author": "Saykali B, Mathiah N, Nahaboo W, Racu ML, Hammou L, Defrance M, et al.",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-42434-v1.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-01817-fig2-chick-primitive-streak",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "eLife 2014;3:e01817 Figure 2 - EMT in the formation of the primitive streak",
+   "description": "Time-lapse of whole chick embryos (EG&K XII to HH3+) forming the primitive streak, plus SEM of fractured embryos before and after streak formation. Serves process 6.",
+   "file_page": "https://elifesciences.org/articles/01817/figures#fig2",
+   "download_url": "https://iiif.elifesciences.org/lax:01817%2Felife-01817-fig2-v1.tif/full/full/0/default.jpg",
+   "author": "Voiculescu O, Bodenstein L, Lau IJ, Stern CD",
+   "license": "CC BY 3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-01817-v1.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-58124-fig1-hipsc-neuron-stages",
+   "process": [
+    "neurogenesis",
+    "pluripotency"
+   ],
+   "title": "eLife 2020;9:e58124 Figure 1 - Transition through early developmental stages in human iPSC-derived neurons",
+   "description": "hiPSC-derived neural stem cells (Nestin, Ki67) to stage-2/3 neurons (beta3-tubulin, MAP2) at days 1, 5 and 14. Neurite and axon emergence. Serves process 4.",
+   "file_page": "https://elifesciences.org/articles/58124/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:58124%2Felife-58124-fig1-v1.tif/full/full/0/default.jpg",
+   "author": "Lindhout FW, Kooistra R, Portegies S, Herstel LJ, Stucchi R, Snoek BL, et al.",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-58124-v1.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-84143-fig3-growth-cone-actin",
+   "process": [
+    "neurogenesis"
+   ],
+   "title": "eLife 2023;12:e84143 Figure 3 - F-actin dynamics in neuron growth cones",
+   "description": "Live imaging of F-actin in growth cones of human iPSC-derived i3Neurons. Serves process 4 (growth cones).",
+   "file_page": "https://elifesciences.org/articles/84143/figures#fig3",
+   "download_url": "https://iiif.elifesciences.org/lax:84143%2Felife-84143-fig3-v2.tif/full/full/0/default.jpg",
+   "author": "Dema A, Charafeddine R, Rahgozar S, van Haren J, Wittmann T, Ori-McKenney KM",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-84143-v2.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "elife-56079-fig1-blastocyst-icm-nanog-gata6",
+   "process": [
+    "morphogenesis",
+    "pluripotency",
+    "notch_lateral_inhibition"
+   ],
+   "title": "eLife 2020;9:e56079 Figure 1 - Cell fate decisions in the ICM of the blastocyst",
+   "description": "Optical sections of immunostained mouse blastocysts (chimeras) showing epiblast (NANOG) vs primitive-endoderm (GATA6) salt-and-pepper fate decisions in the ICM. Serves processes 6 and 1. It is an FGF-mediated rather than Notch pattern, but it is a useful fate-mosaic analogue for process 10.",
+   "file_page": "https://elifesciences.org/articles/56079/figures#fig1",
+   "download_url": "https://iiif.elifesciences.org/lax:56079%2Felife-56079-fig1-v3.tif/full/full/0/default.jpg",
+   "author": "Saiz N, Mora-Bitria L, Rahman S, George H, Herder JP, Garcia-Ojalvo J, et al.",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "width": null,
+   "height": null,
+   "notes": "[eLife: license read first-hand from https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-56079-v3.xml (reachable); IIIF URL per eLife API pattern, untested; multi-panel, crop as needed]"
+  },
+  {
+   "id": "github-bccd-blood-smear",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "BCCD Dataset - BCCD/JPEGImages/BloodImage_00000.jpg",
+   "description": "Stained peripheral blood smear with RBCs, WBCs and platelets (364 images with VOC box annotations). Serves process 3.",
+   "file_page": "https://github.com/Shenggan/BCCD_Dataset",
+   "download_url": "https://raw.githubusercontent.com/Shenggan/BCCD_Dataset/master/BCCD/JPEGImages/BloodImage_00000.jpg",
+   "author": "Shenggan (repackager); original data and annotations from cosmicad and akshaylamba",
+   "license": "MIT",
+   "license_url": "https://github.com/Shenggan/BCCD_Dataset/blob/master/LICENSE",
+   "width": 640,
+   "height": 480,
+   "notes": "LICENSE reads 'MIT License, Copyright (c) 2017 shenggan'. Provenance caveat: the upstream cosmicad/dataset repo has no license, so the MIT grant is only as good as the repackager's rights. 364 images in BCCD/JPEGImages (BloodImage_00001.jpg also returned 200); list the folder for all names. Raw URL returned HTTP 200."
+  },
+  {
+   "id": "github-chula-rbc12",
+   "process": [
+    "hematopoiesis"
+   ],
+   "title": "Chula-RBC-12-Dataset - Dataset/1.jpg",
+   "description": "Blood smear at 1000x (Nikon DS-Fi2-L3) with 12 RBC morphology classes (normal, macro/microcyte, spherocyte, target, stomatocyte, ovalocyte, teardrop, burr, schistocyte, hypochromia, elliptocyte). 738 images. Serves process 3 (erythrocyte shapes).",
+   "file_page": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset",
+   "download_url": "https://raw.githubusercontent.com/Chula-PIC-Lab/Chula-RBC-12-Dataset/main/Dataset/1.jpg",
+   "author": "Chula PIC Lab (Naruenatthanaset et al. 2021, arXiv:2012.01321)",
+   "license": "MIT",
+   "license_url": "https://github.com/Chula-PIC-Lab/Chula-RBC-12-Dataset/blob/main/LICENSE",
+   "width": 640,
+   "height": 480,
+   "notes": "LICENSE reads 'MIT License, Copyright (c) 2021 Chula PIC Lab'. The README asks users to cite the paper. Raw URL returned HTTP 200. Dimensions were read from the JPEG header."
+  },
+  {
+   "id": "github-orgaquant-intestinal-organoids",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "OrgaQuant test_folder/1.jpg (human intestinal organoids)",
+   "description": "Bright-field image of human intestinal organoids in 3D culture, used as OrgaQuant test data (test_folder has 1-7.jpg and 8.tif). Serves process 6.",
+   "file_page": "https://github.com/TKassis/OrgaQuant/tree/master/test_folder",
+   "download_url": "https://raw.githubusercontent.com/TKassis/OrgaQuant/master/test_folder/1.jpg",
+   "author": "Timothy Kassis (Kassis et al., Sci Rep 2019)",
+   "license": "MIT",
+   "license_url": "https://github.com/TKassis/OrgaQuant/blob/master/LICENSE",
+   "width": 1500,
+   "height": 1125,
+   "notes": "LICENSE reads 'MIT License, Copyright (c) 2018 Timothy Kassis'. It covers the repo contents, and the test images have no separate data license. The repo now redirects to timothykassis/OrgaQuant. Raw URL returned HTTP 200. Dimensions were read from the JPEG header."
+  },
+  {
+   "id": "github-embedseg-gowt1-mesc",
+   "process": [
+    "pluripotency",
+    "mitosis"
+   ],
+   "title": "EmbedSeg v0.1.0 release asset Fluo-N2DH-GOWT1.zip",
+   "description": "2D+t fluorescence time-lapse of GFP-expressing GOWT1 mouse embryonic stem cell nuclei (Cell Tracking Challenge Fluo-N2DH-GOWT1) with instance masks. Reference for mESC colony dynamics and division. Serves processes 1 and 2.",
+   "file_page": "https://github.com/juglab/EmbedSeg/releases/tag/v0.1.0",
+   "download_url": "https://github.com/juglab/EmbedSeg/releases/download/v0.1.0/Fluo-N2DH-GOWT1.zip",
+   "author": "Re-hosted by juglab/EmbedSeg (Lalit et al.); original data from the Cell Tracking Challenge",
+   "license": "CC BY-NC 4.0 per attached LICENSE file (non-commercial only); release notes claim CC BY 4.0",
+   "license_url": "https://github.com/juglab/EmbedSeg/releases/download/v0.1.0/LICENSE",
+   "width": null,
+   "height": null,
+   "notes": "Archive size 50.7 MB. Data-license conflict: the v0.1.0 release notes say 'Data is released under CC-BY 4.0 license', but the LICENSE asset attached to the same release is 'Attribution-NonCommercial 4.0 International'. Treat as NON-COMMERCIAL ONLY unless the authors clarify. The release download returned HTTP 206 through release-assets.githubusercontent.com. Upstream Cell Tracking Challenge terms were not verified."
+  },
+  {
+   "id": "github-embedseg-mouse-organoid",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "EmbedSeg v0.1.0 release asset Mouse-Organoid-Cells-CBG.zip",
+   "description": "3D volumes of mouse organoid cells with instance annotations. Serves process 6.",
+   "file_page": "https://github.com/juglab/EmbedSeg/releases/tag/v0.1.0",
+   "download_url": "https://github.com/juglab/EmbedSeg/releases/download/v0.1.0/Mouse-Organoid-Cells-CBG.zip",
+   "author": "Alf Honigmann and Anna Goncharova (MPI-CBG), via juglab/EmbedSeg",
+   "license": "CC BY-NC 4.0 per attached LICENSE file (non-commercial only); release notes claim CC BY 4.0",
+   "license_url": "https://github.com/juglab/EmbedSeg/releases/download/v0.1.0/LICENSE",
+   "width": null,
+   "height": null,
+   "notes": "Archive size 910 MB. Data-license conflict: the v0.1.0 release notes say 'Data is released under CC-BY 4.0 license', but the LICENSE asset attached to the same release is 'Attribution-NonCommercial 4.0 International'. Treat as NON-COMMERCIAL ONLY unless the authors clarify. The release download returned HTTP 206 through release-assets.githubusercontent.com."
+  },
+  {
+   "id": "github-embedseg-platynereis-nuclei",
+   "process": [
+    "morphogenesis"
+   ],
+   "title": "EmbedSeg v0.1.0 release asset Platynereis-Nuclei-CBG.zip",
+   "description": "3D nuclear-stained volumes of the annelid Platynereis dumerilii (developing specimens) with nuclear instance labels. Serves process 6 (whole-embryo cell packing).",
+   "file_page": "https://github.com/juglab/EmbedSeg/releases/tag/v0.1.0",
+   "download_url": "https://github.com/juglab/EmbedSeg/releases/download/v0.1.0/Platynereis-Nuclei-CBG.zip",
+   "author": "juglab/EmbedSeg release (original CBG provider not captured)",
+   "license": "CC BY-NC 4.0 per attached LICENSE file (non-commercial only); release notes claim CC BY 4.0",
+   "license_url": "https://github.com/juglab/EmbedSeg/releases/download/v0.1.0/LICENSE",
+   "width": null,
+   "height": null,
+   "notes": "Archive size 141 MB. Data-license conflict: the v0.1.0 release notes say 'Data is released under CC-BY 4.0 license', but the LICENSE asset attached to the same release is 'Attribution-NonCommercial 4.0 International'. Treat as NON-COMMERCIAL ONLY unless the authors clarify. The release download returned HTTP 206 through release-assets.githubusercontent.com."
+  }
+ ]
+}
