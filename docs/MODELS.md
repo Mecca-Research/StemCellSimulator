@@ -59,21 +59,44 @@ MI = 0.062 measured on the CellProfiler mitosis field and t_M = 1 h
   DAPT (γ-secretase = 0) abolishes NICD and Hes1.
 
 ### Hedgehog — `pathways/hedgehog.js`
-Shh–PTCH1 binding, PTCH1 inhibition of SMO (Taipale et al. 2002), GLI
-activator/repressor balance and PTCH1 negative feedback; French-flag readout
-helper. See the file header for the references used.
+Quasi-steady Shh:PTCH1 binding f_b = Shh/(Shh + K_d) with ligand-induced
+PTCH1 internalisation (Incardona et al. 2000); catalytic inhibition of SMO by
+free PTCH1 (Taipale et al. 2002): dS/dt = k_Sa(1 − S) − (k_Si + k_Ptc(1 − f_b)P)S;
+GLI processing into activator (SMO-driven) or GLI3 repressor; Shea–Ackers
+promoter φ = (β + (A/K_A)²)/(1 + (A/K_A)² + (R/K_R)²) (Lai, Robertson &
+Schaffer 2004; Saha & Schaffer 2006); Ptch1 as a GLI target gives negative
+feedback and the temporal adaptation of Dessaud et al. 2007. Cyclopamine sets
+k_Sa = 0. French-flag helpers with neural-tube domains (FoxA2 / Nkx2.2 /
+Olig2 / Pax6-7). Parameters are from a small search, not a fit.
 
 ## Second order
-- `pathways/mapk.js`: Huang & Ferrell 1996 (*PNAS* 93:10078) cascade in
-  Michaelis–Menten form; effective Hill coefficient nH = ln 81 / ln(EC90/EC10).
+- `pathways/mapk.js`: Huang & Ferrell 1996 (*PNAS* 93:10078) cascade with
+  their concentrations (MAPKKK 3 nM, MAPKK and MAPK 1.2 µM, phosphatases) and
+  K_m = 0.3 µM, k_cat = 150 s⁻¹, in competitive Michaelis–Menten form with exact
+  per-tier steady states; effective Hill coefficient nH = ln 81 / ln(EC90/EC10)
+  = 1.0 / 3.1 / 14 for MAPKKK / MAPKK / MAPK. HF96's mass-action model (with
+  enzyme–substrate sequestration) gives 1.0 / 1.7 / 4.9: same ordering, less
+  steep. Receptor (SCF/c-Kit), ERK nuclear cycling and Elk-1 → c-Fos are
+  illustrative.
 - `pathways/jakstat.js`: EPO receptor → JAK2 → STAT5 phosphorylation,
-  dimerisation, nuclear cycling and SOCS/CIS feedback; total STAT conserved.
+  dimerisation, nuclear import, dephosphorylation and export (structure of
+  Swameye et al. 2003, *PNAS* 100:1028) with CIS/SOCS feedback (Vera et al.
+  2008, *BMC Syst Biol* 2:38); total STAT5 conserved to 1e-9; illustrative
+  parameters.
 - `pathways/hematopoiesis.js`: GATA1–PU.1 cross-antagonism with
-  self-activation (Huang et al. 2007, *Dev Biol* 305:695), Langevin decisions,
-  the paper's lineage tree and stochastic population kinetics.
+  self-activation (Huang et al. 2007, *Dev Biol* 305:695; three attractors at
+  a = 1, pitchfork at a_c = 0.774), EPO / GM-CSF inputs (Chickarmane et al.
+  2009), Langevin decisions; the paper's lineage tree with markers, sizes and
+  stage durations; Gillespie compartment kinetics with niche-limited HSC
+  self-renewal a(1 − H/K) (Schofield 1978; Marciniak-Czochra et al. 2009),
+  H* = K(1 − 1/2a). Survival rules (EPO-dependent erythroid survival, SCF
+  dependence of c-Kit⁺ progenitors) are phenomenological. Note: live imaging
+  (Hoppe et al. 2016, *Nature* 535:299) indicates early lineage choice is not
+  initiated by stochastic PU.1:GATA1 fluctuations; the toggle is presented as a
+  model, not as settled mechanism.
 
 ## Third order
-- `pathways/myogenesis.js`: MRF hierarchy (Bentzinger, Wang & Rudnicki 2012) —
+- `pathways/myogenesis.js` (see also Münsterberg 1995, Gustafsson 2002, Millay 2013): MRF hierarchy (Bentzinger, Wang & Rudnicki 2012) —
   Myf5/MyoD (bistable MyoD autoregulation, exact fold points), myogenin
   (repressed by growth factors), MRF4, MHC; myoblast culture with nematic
   alignment and volume/nuclei-conserving fusion. Kinetic forms are
@@ -88,16 +111,35 @@ helper. See the file header for the references used.
   condition (Hill n > 8 for equal clearance); Routh–Hurwitz Hopf threshold.
 
 ## Fourth order
-- `morpho/reactionDiffusion.js`: grid and triangle-mesh Laplacians;
-  Schnakenberg kinetics with linear Turing analysis (dispersion relation,
-  unstable band; Murray, *Mathematical Biology II*); Gray–Scott (Pearson 1993).
-- `morpho/gradient.js`: source–diffusion–degradation gradients,
-  C(x) = C₀e^(−x/λ), λ = √(D/k); French-flag thresholds (Wolpert).
-- `morpho/ecm.js`: collagen deposition and chemotaxis + haptotaxis
+- `morpho/reactionDiffusion.js`: 2D/3D grid Laplacians (zero-flux or
+  periodic) and a cotangent mesh Laplacian with mixed Voronoi areas (Meyer et
+  al. 2003; < 1 % error against −l(l+1)/R² on a sphere); spherical harmonics
+  and angular power spectra; Schnakenberg (1979), Gray–Scott (Pearson 1993
+  presets) and Gierer–Meinhardt (1972) kinetics; linear Turing analysis
+  (steady state, Jacobian, dispersion relation Re λ(k²), the four Turing
+  conditions, unstable band, fastest mode; Murray, *Mathematical Biology II*),
+  with sphere modes k² = l(l+1)/R² — on the organoid the predicted l* = 7
+  matches the simulated dominant mode; explicit and semi-implicit (conjugate
+  gradient) solvers.
+- `morpho/gradient.js`: C = C₀e^(−x/λ), λ = √(D/k), finite-domain cosh form and
+  numerical 1D/3D solvers; French-flag boundaries x = λ ln(C₀/T) (Wolpert
+  1969); positional error σₓ = λ·CV (Gregor et al. 2007; Bollenbach et al.
+  2008); accumulation time τ(x) = (1 + x/λ)/(2k) (Berezhkovskii et al. 2010);
+  default D and k from the measured Dpp gradient (Kicheva et al. 2007); Shh/BMP
+  neural-tube read-out.
+- `morpho/ecm.js`: procollagen → tropocollagen → fibril (mass-conserving;
+  nucleation–elongation after Kadler et al.), fibroblast persistent random walk
+  (Dunn & Brown 1987) laying fibres along their motion (Canty & Kadler 2004),
+  and `MigrationSim` v = χ/(1 + αC)∇C + ρ∇E + noise with MMP degradation
   (Anderson & Chaplain 1998) — the paper's "Cell Movement = Chemotaxis +
   Haptotaxis".
-- `pathways/crosstalk.js`: Wnt–Notch crosstalk and combinatorial fate logic of
-  the intestinal crypt (Fre et al. 2005; van Es et al. 2005).
+- `pathways/crosstalk.js`: Dishevelled ⊣ GSK-3β ⊣ β-catenin and ligand → NICD
+  → Hes1 ⊣ Atoh1 → Dll1 per cell; crosstalk by Dishevelled–NICD sequestration
+  (Axelrod et al. 1996) and Wnt-induced Jagged1 (Rodilla et al. 2009); fate
+  from a thermodynamic two-site enhancer (Shea & Ackers 1985; Bintu et al.
+  2005) giving stem / Paneth / absorptive / goblet fates (Fre et al. 2005;
+  van Es et al. 2005). Reproduces the γ-secretase-inhibitor (all secretory)
+  and constitutive-NICD (no secretory) phenotypes. Rates are dimensionless.
 
 ## Epigenetics and the landscape — `pathways/epigenetics.js`
 - The paper's reactions as mark fractions: dm/dt = k_M·DNMT·(1 − m) − k_DM·m,

@@ -40,6 +40,12 @@ export class Chart {
     this.dirty = true;
   }
 
+  /** Fix (or with null, release) the y range. */
+  setYRange(range) {
+    this.yRange = range;
+    this.dirty = true;
+  }
+
   /** Vertical marker lines: [{ x, color }] */
   setMarkers(markers) {
     this.markers = markers;
