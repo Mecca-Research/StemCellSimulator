@@ -134,7 +134,8 @@ void main() {
     float shade = 0.82 + 0.18 * clamp(dot(N, normalize(uLightDir)), 0.0, 1.0);
     col *= shade;
     if (uUseInst > 0.5) col = mix(col, col * base, 0.5);
-    alpha = membraneLike ? clamp(0.45 + rim * 0.5, 0.0, 1.0) : 1.0;
+    // default membrane opacity (0.22) gives ~0.45 + rim; fainter overlays stay faint
+    alpha = membraneLike ? clamp(uOpacity * 2.0 + rim * 0.5, 0.0, 1.0) : 1.0;
   }
   gl_FragColor = vec4(col, alpha);
   #include <tonemapping_fragment>

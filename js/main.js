@@ -90,6 +90,7 @@ async function activate(hash) {
     const instance = await mod.create(ctx);
     if (activating !== key) { instance?.dispose?.(); return; }
     active = { def, instance, mod };
+    stage.refreshClip();
     debug.sceneId = def.id;
     debug.ready = true;
   } catch (err) {

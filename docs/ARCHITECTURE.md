@@ -43,6 +43,12 @@ export default {
 };
 ```
 
+Scenes with several views keep the scene-level controls at the top and rebuild
+their view-specific controls in a sub-panel (`new Panel(div)` appended to
+`ctx.panel.current`, or `ctx.panel.clear()` followed by a full rebuild); call
+`subPanel.drawCharts()` from `update`. After changing `stage.clipAxis` /
+`stage.clipRange` call `stage.refreshClip()`.
+
 Rules: add objects only under `ctx.root`; keep simulation state in plain JS;
 every chart/readout goes through `ctx.panel`; never touch the DOM outside the
 panel; unit conversions (sim time per second) are chosen by the scene and shown

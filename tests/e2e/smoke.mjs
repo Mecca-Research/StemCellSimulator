@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { serve } from './serve.mjs';
 import { SCENES } from '../../js/scenes/index.js';
+import { EXTRA_VIEWS } from './views.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..', '..');
@@ -16,7 +17,7 @@ await mkdir(outDir, { recursive: true });
 
 const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const modes = process.argv.includes('--modes') ? ['physical', 'confocal', 'histology'] : ['physical'];
-const ids = only.length ? only : SCENES.map((s) => s.id);
+const ids = only.length ? only : [...SCENES.map((s) => s.id), ...(process.argv.includes('--all') ? EXTRA_VIEWS : [])];
 const { server, url } = await serve(root);
 const preinstalled = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 const browser = await chromium.launch({

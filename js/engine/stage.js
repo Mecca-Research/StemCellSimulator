@@ -66,7 +66,7 @@ export class Stage {
     this.speed = 1;
     this.simTime = 0;
     this.frames = 0;
-    this.clock = new THREE.Clock();
+    this._last = performance.now();
     this.onFrame = null;
     // adaptive resolution: keep interaction smooth on weak GPUs / software GL
     this.maxPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
@@ -121,6 +121,7 @@ export class Stage {
   /** Configure the global section plane: axis in world space, t in [-1, 1]. */
   setClip(on, t = 0) {
     this.clipOn = on;
+    this.clipT = t;
     const c = this.clipCenter ?? new THREE.Vector3();
     const [a, b] = this.clipRange;
     const offset = a + (b - a) * (t + 1) / 2;
@@ -131,6 +132,9 @@ export class Stage {
     this.renderer.clippingPlanes = on ? [this.clipPlane] : [];
     this.root.traverse((o) => o.syncClip?.(this.clipPlane, on));
   }
+
+  /** Re-apply the section plane after a scene changed clipAxis / clipRange. */
+  refreshClip() { this.setClip(this.clipOn, this.clipT ?? 0); }
 
   setPickables(list) { this.pickables = list; }
 
@@ -154,7 +158,9 @@ export class Stage {
   start() {
     const tick = () => {
       this._raf = requestAnimationFrame(tick);
-      const raw = this.clock.getDelta();
+      const now = performance.now();
+      const raw = (now - this._last) / 1000;
+      this._last = now;
       const dt = Math.min(raw, 1 / 20);
       this.adaptResolution(raw);
       shared.uTime.value += dt;
