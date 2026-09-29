@@ -74,9 +74,10 @@ export default {
     lumen.renderOrder = 4;
     neph.add(lumen);
 
-    const sphere = unitSphere(2);
-    const epi = new InstancePool(sphere, cellMaterial({ role: 'membrane', opacity: 0.55, noise: 0.35 }), 4096, neph);
-    const epiNuc = new InstancePool(sphere, cellMaterial({ role: 'nucleus', color: 0xa9c4ff }), 4096, neph);
+    // ~3,700 epithelial cells: the nuclei sit inside translucent membranes, so
+    // a coarser sphere (80 instead of 180 triangles) costs nothing visible
+    const epi = new InstancePool(unitSphere(2), cellMaterial({ role: 'membrane', opacity: 0.55, noise: 0.35 }), 4096, neph);
+    const epiNuc = new InstancePool(unitSphere(1), cellMaterial({ role: 'nucleus', color: 0xa9c4ff }), 4096, neph);
     const tmp = new THREE.Color();
     const up = new THREE.Vector3();
     const cells = [];
@@ -131,7 +132,7 @@ export default {
       corpuscle.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(loop, true), 60, 1.6, 8, true), capMat));
     }
     const podo = new InstancePool(unitSphere(2), cellMaterial({ role: 'membrane', color: 0x9dffcf, opacity: 0.6 }), 256, corpuscle);
-    const podoNuc = new InstancePool(unitSphere(2), cellMaterial({ role: 'nucleus', color: 0xa9c4ff }), 256, corpuscle);
+    const podoNuc = new InstancePool(unitSphere(1), cellMaterial({ role: 'nucleus', color: 0xa9c4ff }), 256, corpuscle);
     const feet = new InstancePool(unitSphere(1), cellMaterial({ role: 'reporter', color: 0x6fffc0 }), 2048, corpuscle);
     podo.begin(); podoNuc.begin(); feet.begin();
     const dir = [0, 0, 0];
