@@ -1,0 +1,65 @@
+{
+ "hipsc": {
+  "areal_density_per_100um2": 0.497,
+  "cell_height_um_median": 11.6,
+  "cell_radius_um_equiv": 9.13,
+  "cell_volume_um3_median": 3188.336,
+  "n_cells": 22,
+  "n_interior": 3,
+  "n_mitotic": 1,
+  "n_whole_nuclei": 11,
+  "nc_ratio_median": 0.39,
+  "neighbours_mean_interior": 8.333,
+  "nn_distance_um_median": 13.016,
+  "nucleus_radius_um_equiv": 5.652,
+  "nucleus_semi_axes_um_median": [
+   7.704,
+   6.017,
+   4.267
+  ],
+  "nucleus_volume_um3_median": 756.264
+ },
+ "kidney": {
+  "slices": 16
+ },
+ "mitosis": {
+  "mitotic_index": 0.062,
+  "n_mitotic": 19,
+  "n_nuclei": 306
+ },
+ "npc": {
+  "E0": 1.185,
+  "E_inf": 3.018,
+  "model": "E(t) = E_inf - (E_inf - E0) exp(-t / tau)",
+  "r2": 0.955,
+  "tau_frames": 13.53
+ },
+ "organoids": {
+  "n_organoids": 91,
+  "radius_cv": 0.329,
+  "radius_p90_over_median": 1.727,
+  "radius_px_median": 11.0
+ },
+ "rbc": {
+  "lymphocyte": {
+   "diameter_px_median": 37.998,
+   "lymphocyte_nucleus_diameter_um": 9.175,
+   "n_cells": 63,
+   "um_per_px": 0.206
+  },
+  "normal": {
+   "diameter_px_median": 38.613,
+   "n_cells": 59,
+   "pallor_min_over_max": 0.409,
+   "profile_correlation": 0.981,
+   "profile_rmse": 0.063,
+   "um_per_px": 0.203
+  }
+ },
+ "single_cell": {
+  "equivalent_diameter_um": 13.085
+ },
+ "skin": {
+  "n_nuclei": 877
+ }
+}

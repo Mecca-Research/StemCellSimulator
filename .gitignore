@@ -1,6 +1,6 @@
 # raw reference data is fetched (and SHA-256 verified) by tools/fetch_micrographs.py
 assets/raw/
-node_modules/
+node_modules
 tests/e2e/out/
 __pycache__/
 *.pyc

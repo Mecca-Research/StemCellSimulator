@@ -1,0 +1,32 @@
+{
+ "extent_xyz_um": [
+  634.88,
+  634.88,
+  20.0
+ ],
+ "mosaic": {
+  "channels": {
+   "b": "605 nm",
+   "g": "515 nm",
+   "r": "450 nm"
+  },
+  "cols": 4,
+  "file": "kidney_volume.jpg",
+  "slices": 16,
+  "tile": [
+   256,
+   256
+  ]
+ },
+ "shape_zyx": [
+  16,
+  256,
+  256
+ ],
+ "source": "kidney-tissue-fluorescence.tif (G. Buckley, CC0)",
+ "spacing_zyx_um": [
+  1.25,
+  2.48,
+  2.48
+ ]
+}

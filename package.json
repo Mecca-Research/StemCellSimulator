@@ -1,0 +1,16 @@
+{
+  "name": "stem-cell-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "3D stem-cell differentiation and morphogenesis simulator calibrated on real microscopy",
+  "type": "module",
+  "scripts": {
+    "serve": "node tests/e2e/serve.mjs . 8080",
+    "test": "node --test tests/models/*.test.mjs",
+    "test:e2e": "node tests/e2e/smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  },
+  "license": "MIT"
+}
