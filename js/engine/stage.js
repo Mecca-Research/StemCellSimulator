@@ -15,6 +15,9 @@ const BACKGROUNDS = {
 };
 const BLOOM = { physical: 0.12, confocal: 0.38, histology: 0.0 };
 const BLOOM_THRESHOLD = { physical: 0.6, confocal: 0.42, histology: 1 };
+// adaptive resolution: frame-time target and the lowest pixel ratio it may use
+const TARGET_FRAME = 1 / 30;
+const MIN_PIXEL_RATIO = 0.35;
 
 export class Stage {
   constructor(canvas) {
@@ -71,9 +74,10 @@ export class Stage {
     // adaptive resolution: keep interaction smooth on weak GPUs / software GL
     this.maxPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
     this.pixelRatio = this.maxPixelRatio;
+    this._frameTimes = [];
     this._frameAcc = 0;
-    this._frameN = 0;
     this.adaptive = true;
+    this.lowPower = false;
 
     this._resize = () => this.resize();
     window.addEventListener('resize', this._resize);
@@ -167,22 +171,40 @@ export class Stage {
       shared.uTime.value += dt;
       if (this.onFrame) this.onFrame(this.running ? dt * this.speed : 0, dt);
       this.controls.update();
-      if (this.bloom.strength > 0.001) this.composer.render();
-      else this.renderer.render(this.scene, this.camera);
+      // Without bloom the scene goes straight to the multisampled canvas, except
+      // on a device that had to lower its resolution: there the composer's
+      // single-sample target is several times cheaper.
+      const bloomOn = this.bloom.strength > 0.001;
+      if (bloomOn || this.lowPower) {
+        this.bloom.enabled = bloomOn;
+        this.composer.render();
+      } else this.renderer.render(this.scene, this.camera);
       this.frames++;
     };
     tick();
   }
 
+  /**
+   * Judge a window of frames by its median frame time, so that a single
+   * shader-compile stall does not lower the resolution. A window closes after
+   * 20 frames or 0.75 s (at least 3 frames), so software GL adapts in seconds.
+   * Cost scales with pixel count (pr^2), so the step is sized to the overrun.
+   */
   adaptResolution(raw) {
     if (!this.adaptive) return;
+    const w = this._frameTimes;
+    w.push(raw);
     this._frameAcc += raw;
-    if (++this._frameN < 20) return;
-    const mean = this._frameAcc / this._frameN;
-    this._frameAcc = 0; this._frameN = 0;
+    if (w.length < 20 && !(this._frameAcc >= 0.75 && w.length >= 3)) return;
+    const median = w.slice().sort((a, b) => a - b)[w.length >> 1];
+    w.length = 0;
+    this._frameAcc = 0;
     let pr = this.pixelRatio;
-    if (mean > 1 / 24 && pr > 0.5) pr = Math.max(0.5, pr * 0.85);
-    else if (mean < 1 / 50 && pr < this.maxPixelRatio) pr = Math.min(this.maxPixelRatio, pr * 1.15);
+    if (median > 1 / 24 && pr > MIN_PIXEL_RATIO) {
+      const step = Math.min(0.85, Math.max(0.5, Math.sqrt(TARGET_FRAME / median)));
+      pr = Math.max(MIN_PIXEL_RATIO, pr * step);
+    } else if (median < 1 / 50 && pr < this.maxPixelRatio) pr = Math.min(this.maxPixelRatio, pr * 1.15);
+    this.lowPower = pr < this.maxPixelRatio * 0.75;
     if (pr !== this.pixelRatio) {
       this.pixelRatio = pr;
       this.renderer.setPixelRatio(pr);
@@ -194,6 +216,7 @@ export class Stage {
   /** Fixed resolution (used when recording previews). */
   setFixedPixelRatio(pr) {
     this.adaptive = false;
+    this.lowPower = false;
     this.pixelRatio = pr;
     this.renderer.setPixelRatio(pr);
     this.composer.setPixelRatio?.(pr);
