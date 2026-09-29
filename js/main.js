@@ -64,6 +64,7 @@ async function activate(hash) {
   }
   active = null;
   panel.clear();
+  $('hud-tip').hidden = true;
   setLegend($('hud-legend'), []);
   stage.setPickables([]);
   stage.clipAxis.set(0, 0, 1);

@@ -31,7 +31,9 @@ export const collier = {
    */
   step(s, nbrs, dt, p = collier.defaults) {
     const n = s.N.length;
-    const dN = new Float64Array(n), dD = new Float64Array(n);
+    // scratch buffers are cached on the state to avoid per-step allocation
+    if (!s._dN || s._dN.length !== n) { s._dN = new Float64Array(n); s._dD = new Float64Array(n); }
+    const dN = s._dN, dD = s._dD;
     for (let i = 0; i < n; i++) {
       const nb = nbrs[i];
       let avg = 0;

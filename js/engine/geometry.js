@@ -52,9 +52,17 @@ export function lobedNucleus(n = 4, r = 1, rng = Math.random) {
   return g;
 }
 
+/** Indexed (vertex-shared) icosphere so displaced shapes shade smoothly. */
+function smoothIcosphere(r, detail) {
+  const g = new THREE.IcosahedronGeometry(r, detail);
+  g.deleteAttribute('uv');
+  g.deleteAttribute('normal');
+  return mergeVertices(g);
+}
+
 /** Kidney-shaped (monocyte) nucleus: a sphere with an indentation. */
 export function indentedNucleus(r = 1) {
-  const g = new THREE.IcosahedronGeometry(r, 4);
+  const g = smoothIcosphere(r, 4);
   const p = g.attributes.position;
   const v = new THREE.Vector3();
   for (let i = 0; i < p.count; i++) {
@@ -70,7 +78,7 @@ export function indentedNucleus(r = 1) {
 
 /** Organic, slightly lumpy blob (for folded globular proteins / debris). */
 export function blobGeometry(r = 1, amp = 0.18, seed = 1, detail = 3) {
-  const g = new THREE.IcosahedronGeometry(r, detail);
+  const g = smoothIcosphere(r, detail);
   const p = g.attributes.position;
   const v = new THREE.Vector3();
   const f = (x, y, z) => Math.sin(x * 3.1 + seed) * Math.cos(y * 2.7 + seed * 1.7) * Math.sin(z * 3.4 + seed * 0.3);

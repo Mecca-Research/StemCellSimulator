@@ -13,8 +13,8 @@ const BACKGROUNDS = {
   confocal: new THREE.Color(0x000000),
   histology: new THREE.Color(0xf4ecf1),
 };
-const BLOOM = { physical: 0.12, confocal: 0.5, histology: 0.0 };
-const BLOOM_THRESHOLD = { physical: 0.6, confocal: 0.28, histology: 1 };
+const BLOOM = { physical: 0.12, confocal: 0.38, histology: 0.0 };
+const BLOOM_THRESHOLD = { physical: 0.6, confocal: 0.42, histology: 1 };
 
 export class Stage {
   constructor(canvas) {
@@ -73,6 +73,7 @@ export class Stage {
     this.pixelRatio = this.maxPixelRatio;
     this._frameAcc = 0;
     this._frameN = 0;
+    this.adaptive = true;
 
     this._resize = () => this.resize();
     window.addEventListener('resize', this._resize);
@@ -174,12 +175,13 @@ export class Stage {
   }
 
   adaptResolution(raw) {
+    if (!this.adaptive) return;
     this._frameAcc += raw;
     if (++this._frameN < 20) return;
     const mean = this._frameAcc / this._frameN;
     this._frameAcc = 0; this._frameN = 0;
     let pr = this.pixelRatio;
-    if (mean > 1 / 24 && pr > 0.35) pr = Math.max(0.35, pr * 0.8);
+    if (mean > 1 / 24 && pr > 0.5) pr = Math.max(0.5, pr * 0.85);
     else if (mean < 1 / 50 && pr < this.maxPixelRatio) pr = Math.min(this.maxPixelRatio, pr * 1.15);
     if (pr !== this.pixelRatio) {
       this.pixelRatio = pr;
@@ -187,6 +189,15 @@ export class Stage {
       this.composer.setPixelRatio?.(pr);
       this.resize();
     }
+  }
+
+  /** Fixed resolution (used when recording previews). */
+  setFixedPixelRatio(pr) {
+    this.adaptive = false;
+    this.pixelRatio = pr;
+    this.renderer.setPixelRatio(pr);
+    this.composer.setPixelRatio?.(pr);
+    this.resize();
   }
 
   screenshot() {

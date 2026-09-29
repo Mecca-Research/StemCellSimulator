@@ -40,6 +40,12 @@ export class Chart {
     this.dirty = true;
   }
 
+  /** Vertical marker lines: [{ x, color }] */
+  setMarkers(markers) {
+    this.markers = markers;
+    this.dirty = true;
+  }
+
   clear() {
     this.xs = [];
     for (const s of this.series) s.data = [];
@@ -49,10 +55,10 @@ export class Chart {
 
   draw() {
     if (!this.dirty) return;
-    this.dirty = false;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const W = this.c.clientWidth, H = this.c.clientHeight;
-    if (!W || !H) return;
+    if (!W || !H) return; // hidden: stay dirty so the chart draws once shown
+    this.dirty = false;
     if (this.c.width !== Math.round(W * dpr) || this.c.height !== Math.round(H * dpr)) {
       this.c.width = Math.round(W * dpr);
       this.c.height = Math.round(H * dpr);

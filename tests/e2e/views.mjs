@@ -2,6 +2,7 @@
 // default view of every scene.
 export const EXTRA_VIEWS = [
   'gallery?view=npc', 'gallery?view=skin', 'gallery?view=rbc', 'gallery?view=organoids', 'gallery?view=stack', 'gallery?view=qpi',
+  'signaling?view=spheroid',
   'proteins?view=collagen',
   'differentiation?view=neurogenesis', 'differentiation?view=hormone',
   'landscape?view=state',
