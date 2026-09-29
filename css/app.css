@@ -171,6 +171,8 @@ table.data td.num { text-align: right; font-family: var(--mono); }
   body.nav-open #sidebar { transform: none; }
   body.panel-open #panel { transform: none; }
   #transport { bottom: 8px; gap: 6px; }
+  #scene-order { display: none; }
+  #hud-legend { font-size: 11px; max-height: 30vh; overflow-y: auto; padding: 6px 8px; max-width: 70%; }
   #transport input[type=range] { width: 70px; }
   .seg button { padding: 6px 8px; }
 }
