@@ -25,7 +25,7 @@ const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || (existsSync(preinstalled) ? preinstalled : undefined),
   args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'],
 });
-const page = await browser.newPage({ viewport: { width: 1240, height: 760 } });
+const page = await browser.newPage({ viewport: { width: Number(process.env.WIDTH ?? 980), height: Number(process.env.HEIGHT ?? 640) } });
 for (const spec of specs) {
   const cut = spec.lastIndexOf('=');
   const scene = spec.slice(0, cut), mode = spec.slice(cut + 1);
@@ -39,11 +39,11 @@ for (const spec of specs) {
   await page.addStyleTag({ content: '#hud, #transport, #loading { display: none !important; }' });
   await page.evaluate((m) => { window.__sim.setMode(m); window.__sim.stage.speed = 3; window.__sim.stage.setFixedPixelRatio(1); }, mode);
   // let the simulation develop before recording
-  await page.waitForFunction((f) => window.__sim.frames > f, (await page.evaluate(() => window.__sim.frames)) + 60, { timeout: 180000 });
+  await page.waitForFunction((f) => window.__sim.frames > f, (await page.evaluate(() => window.__sim.frames)) + Number(process.env.WARMUP ?? 30), { timeout: 180000 });
   const vp = page.locator('#viewport');
   for (let i = 0; i < FRAMES; i++) {
     const f0 = await page.evaluate(() => window.__sim.frames);
-    await page.waitForFunction((f) => window.__sim.frames > f + 2, f0, { timeout: 60000 });
+    await page.waitForFunction((f) => window.__sim.frames > f + 1, f0, { timeout: 60000 });
     await vp.screenshot({ path: join(dir, `${String(i).padStart(3, '0')}.png`) });
   }
   console.log(`captured ${name}`);

@@ -69,6 +69,11 @@ Deep links open a specific view, e.g. `#signaling?view=spheroid`,
   <img src="docs/images/landscape-physical.webp" width="32%" alt="Waddington landscape">
   <img src="docs/images/kidney-histology.webp" width="32%" alt="Virtual H&amp;E kidney">
 </p>
+<p align="center">
+  <img src="docs/images/network-physical.webp" width="32%" alt="Reaction network, PCA embedding">
+  <img src="docs/images/atlas-physical.webp" width="32%" alt="Cellular map lineage tree">
+  <img src="docs/images/gallery-view-skin-physical.webp" width="32%" alt="Real H&amp;E skin with its animated variation and a 3D epidermis">
+</p>
 
 ### Three ways to look at every scene
 
